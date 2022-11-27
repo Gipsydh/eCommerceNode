@@ -1,0 +1,184 @@
+[
+  {
+    "p_name": "accent chair",
+    "p_price": 25,
+    "p_company": "marcos",
+    "p_rating": 4,
+    "p_type":"Chairs",
+    "p_trending":true
+  },
+  {
+    "p_name": "albany sectional",
+    "p_price": 109,
+    "p_company": "liddy",
+    "p_rating": 5,
+    "p_type":"Others"
+  },
+  {
+    "p_name": "albany table",
+    "p_price": 309,
+    "p_company": "liddy",
+    "p_rating": 4.9,
+    "p_type":"Tables",
+    "p_trending":true
+
+  },
+  {
+    "p_name": "armchair",
+    "p_price": 125,
+    "p_company": "marcos",
+    "p_rating": 4.8,
+    "p_type":"Chairs",
+    "p_outOfStock":true
+
+  },
+  {
+    "p_name": "bar stool",
+    "p_price": 40,
+    "p_company": "liddy",
+    "p_rating": 4.6,
+    "p_type":"Chairs",
+    "p_trending":true
+
+  },
+  {
+    "p_name": "dining table",
+    "p_price": 42,
+    "p_company": "ikea",
+    "p_rating": 4.55,
+    "p_type":"Tables",
+    "p_trending":true
+
+  },
+  {
+    "p_name": "emperor bed",
+    "p_price": 23,
+    "p_company": "ikea",
+    "p_type":"Beds"
+  },
+  {
+    "p_name": "entertainment center",
+    "p_price": 59,
+    "featured": true,
+    "p_company": "caressa",
+    "p_type":"Others"
+  },
+  {
+    "p_name": "high-back bench",
+    "p_price": 39,
+    "featured": true,
+    "p_company": "ikea",
+    "p_type":"Benches",
+    "p_trending":true,
+    "p_new":true
+  },
+
+  {
+    "p_name": "leather sofa",
+    "p_price": 99,
+    "p_company": "caressa",
+    "p_type":"Sofa"
+  },
+  {
+    "p_name": "modern bookshelf",
+    "p_price": 31,
+    "featured": true,
+    "p_company": "caressa",
+    "p_type":"Others"
+  },
+  {
+    "p_name": "modern poster",
+    "p_price": 30,
+    "p_company": "liddy",
+    "p_type":"Others"
+  },
+  {
+    "p_name": "shelf",
+    "p_price": 30,
+    "p_company": "ikea",
+    "p_type":"Others",
+    "p_trending":true,
+    "p_new":true,
+    "p_outOfStock":true,
+    "p_discPrice":20
+
+  },
+  {
+    "p_name": "simple chair",
+    "p_price": 109,
+    "p_company": "liddy",
+    "p_type":"Chairs",
+    "p_new":true,
+    "p_discPrice":80
+  },
+  {
+    "p_name": "sofa set",
+    "p_price": 129,
+    "p_company": "marcos",
+    "p_type":"Sofa"
+  },
+  {
+    "p_name": "suede armchair",
+    "p_price": 15,
+    "p_company": "caressa",
+    "p_type":"Chairs"
+  },
+  {
+    "p_name": "utopia sofa",
+    "p_price": 79,
+    "featured": true,
+    "p_company": "liddy",
+    "p_type":"Sofa",
+    "p_new":true,
+    "p_discPrice":50
+  },
+  {
+    "p_name": "vase table",
+    "p_price": 120,
+    "featured": true,
+    "p_company": "marcos",
+    "p_type":"Tables"
+  },
+  {
+    "p_name": "wooden bed",
+    "p_price": 25,
+    "p_company": "ikea",
+    "p_type":"Beds",
+    "p_outOfStock":false
+
+  },
+  {
+    "p_name": "wooden desk",
+    "p_price": 15,
+    "p_company": "ikea",
+    "p_type":"Desks",
+    "p_trending":true,
+    "p_new":true,
+    "p_discPrice":10
+
+  },
+  {
+    "p_name": "wooden desk",
+    "p_price": 40,
+    "p_company": "ikea",
+    "p_type":"Desks"
+  },
+  {
+    "p_name": "wooden table",
+    "p_price": 23,
+    "featured": true,
+    "p_company": "caressa",
+    "p_type":"Tables"
+
+  },
+  {
+    "p_name": "a first wooden table",
+    "p_price": 23,
+    "featured": true,
+    "p_company": "caressa",
+    "p_type":"Tables",
+    "p_new":true,
+    "p_outOfStock":true
+
+  }
+]
