@@ -4,7 +4,7 @@ const connectDB=require('./db/connect')
 const homeProducts=require("./routes/homepage")
 const adminPanel=require("./routes/admin");
 const products=require("./routes/product")
-const session=require('express-session')
+const session=require('cookie-session')
 require('dotenv').config()
 app.use(session({
     secret:"xyz234$%`",
