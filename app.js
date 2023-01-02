@@ -9,7 +9,7 @@ require('dotenv').config()
 app.use(session({
     secret:"xyz234$%`",
     resave:false,
-    saveUninitialized:false,
+    saveUninitialized:true,
 }))
 app.use(express.json())
 app.use("/api/v1",homeProducts)
