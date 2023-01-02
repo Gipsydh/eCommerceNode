@@ -76,6 +76,10 @@ span{
     padding: 10px;
     border-radius: 2px;
 }
+.loginContainer .logInHeadingMobile{
+    display: none;
+   
+}
 .errorModule .lower span:hover{
     cursor: pointer;
     background-color: #1e4ac4;
