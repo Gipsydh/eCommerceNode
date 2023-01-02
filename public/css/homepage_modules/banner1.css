@@ -1,0 +1,419 @@
+
+.container .banner1{
+    width: 1560px;
+    display: flex;
+    margin-bottom: 100px;
+
+}
+.container .banner1 img{
+    max-width: 100%;
+}
+.container .banner1 .left{
+    margin: 0 15px;
+}
+
+
+.container .banner1 .right{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+.container .banner1 .right .up{
+   margin: 0 15px 30px 15px;
+
+}
+.container .banner1 .right .up,.container .banner1 .right .down{
+
+    display: flex;
+}
+.container .banner1 .right .down{
+    display: flex;
+    justify-content: space-between;
+}
+.container .banner1 .right .down .innerLeft,.container .banner1 .right .down .innerRight{
+    margin: 0 15px;
+}
+.banner1 .elementB{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.banner1 .bannerInner{
+    text-align: center;
+    position: absolute;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.banner1 .bannerInner .heading span{
+    font-size: 60px;
+    font-family: 'jost';
+    font-weight: bold;
+    
+}
+.banner1 .bannerInner .info span{
+    font-size: 20px;
+    font-family: 'jost';
+    font-weight: 400;
+    
+}
+.banner1 .b1-1{
+    top:57%;
+    width:54%;
+
+}
+.banner1 .b1-2{
+    display: flex;
+    left: 45%;
+    justify-content: center;
+    align-items: flex-start;
+    top: 50%;
+    width: 47%;
+    transform:translateY(-50%);
+}
+.banner1 .b1-2 .heading span{
+    font-size: 32px;
+    font-weight: 500;
+}
+.banner1 .b1-1 .heading{
+    margin-bottom: 12px;
+}
+.banner1 .b1-1 .info{
+    background-color: white;
+    margin-bottom: 25px;
+    width: 100%;
+    padding: 15px 0;
+}
+.banner1 .b1-2 .info{
+    margin-bottom: 15px;
+}
+.banner1 .b1-1 .shopBtn,.banner1 .b1-2 .shopBtn{
+    padding: 12px 22px;
+    background-color: var(--noticeBoardBackground);
+    color: white;
+}
+.banner1 .b1-3{
+    color: white;
+    top: 50%;
+    transform:translateY(-25%)
+  
+
+}
+.banner1 .b1-3 .heading{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    margin-bottom:10px ;
+
+}
+.banner1 .b1-3 .info{
+    margin-bottom:25px ;
+}
+.banner1 .b1-3 .shopBtn{
+    padding: 12px 22px;
+    background-color: white;
+    color: var(--noticeBoardBackground);
+}
+.banner1 .b1-3 .shopBtn span{
+    font-weight: 400;
+}
+.banner1 .b1-3 .heading span{
+    font-size: 32px;
+}
+.banner1 .b1-3 .heading::after{
+  
+    height: 55px;
+    width: 55px;
+    top: -60px;
+    content: '';
+    position: absolute;
+    background: url(../../resources/logo-1.png) no-repeat;
+}
+.banner1 .b1-4{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    height: 100%;
+}
+.banner1 .b1-4 .heading span{
+    font-size: 90px;
+    color: transparent !important;
+    -webkit-text-stroke:2px white;
+}
+.elementB{
+    position: relative;
+}
+/* .elementB:hover::after{
+    background-color: rgba(0, 0, 0, 0.068);
+    scale: 1;
+    
+    transform: translateY(-50%) rotate(180deg);
+    transform-origin: center;
+    opacity: 1;
+}
+.elementB::after{
+    transform-origin: center;
+    transition: 0.5s ease-in-out;
+    content: '';
+    position: absolute;
+    width: 90%;
+    opacity: 0;
+    height: 90%;
+    top: 50%;
+    transform: translateY(-50%) rotate(0deg);
+    background-color: transparent;
+    scale: 0;
+
+} */
+.banner1 .shopBtn{
+    position: relative;
+}
+
+.banner1 .shopBtn{
+    overflow: hidden;
+}
+.banner1 .shopBtn::before{
+    transition: 0.3s ease-in-out;
+    position: absolute;
+    content: '';
+    top: 0;
+    z-index: 0;
+    left: -100%;
+    height: 100%;
+    width: 100%;
+    background-color: var(--buttonHover);
+}
+.banner1 .shopBtn:hover::before{
+    left: 0%;
+}
+.banner1 .shopBtn span{
+    position: relative;
+    z-index: 10;
+}
+@media all and (max-width:1500px) {
+    .container .banner1{
+        width: 1260px;
+        
+    }
+}
+@media all and (max-width:1300px) {
+    .container .banner1{
+        width: 1170px;
+        
+    }
+}
+@media all and (max-width:1200px) {
+    .container .banner1{
+        width: 970px;
+       
+    }
+}
+@media all and (max-width:1000px) {
+    .container .banner1{
+        margin-bottom: 30px;
+    }
+    .container .banner1{
+        flex-direction: column;
+        width: 95%;
+    }
+    .container .banner1 .left{
+        margin: 0 0 30px;
+    }
+    
+}
+.elementB{
+    overflow: hidden;
+}
+.elementB img{
+    transition: 2s ease-in-out;
+   
+    transform:scale(1)
+
+}
+.elementB:hover img{
+    transform:scale(1.1)
+}
+@media all and (max-width:1600px) {
+    .banner1 .b1-1 .heading span{
+        font-size: 46px;
+    }
+    .banner1 .b1-1 .info span{
+        font-size: 15px;
+    }
+    .banner1 .b1-1 .shopBtn span{
+        padding: 7px 16px;
+    }
+    .banner1 .b1-2 .heading span{
+        font-size: 28px;
+    }
+    .banner1 .b1-2 .info span{
+        font-size: 15px;
+    }
+    .banner1 .b1-2 .shopBtn{
+        padding: 7px 16px;
+    }
+    .banner1 .b1-2 .shopBtn span{
+        padding: 0;
+    }
+    .banner1 .b1-3 .heading span{
+        font-size: 26px;
+    }
+    .banner1 .b1-3 .info span{
+        font-size: 13px;
+    }
+    .banner1 .b1-3 .shopBtn{
+        padding: 7px 16px;
+    }
+    .banner1 .b1-4 .heading span{
+        font-size: 60px;
+    }
+}
+@media all and (max-width:1200px) {
+    .container .banner1{
+        margin-bottom: 50px;
+    }
+    .banner1 .b1-1 .heading span{
+        font-size: 28px;
+
+    }
+    .banner1 .b1-1 .heading {
+        margin-bottom: 8px;
+    }
+    .banner1 .b1-1 .info span{
+        font-size: 10px;
+    }
+    .banner1 .b1-1 .info{
+        margin-bottom: 10px;
+        padding: 5px;
+    }
+    .banner1 .b1-1 .shopBtn {
+        padding: 4px 10px;
+
+    }
+    .banner1 .b1-1 .shopBtn span{
+        padding: 4px 10px;
+        font-size: 10px;
+    }
+    .banner1 .b1-2 .heading span{
+        font-size: 20px;
+    }
+    .banner1 .b1-2 .info span{
+        font-size: 10px;
+    }
+    .banner1 .b1-2 .shopBtn{
+        padding: 4px 10px;
+        font-size: 10px;
+    }
+    .banner1 .b1-2 .shopBtn span{
+        padding: 0;
+    }
+    .banner1 .b1-3 .heading span{
+        font-size: 20px;
+    }
+    .banner1 .b1-3 .info span{
+        font-size: 13px;
+    }
+    .banner1 .b1-3 .info{
+        margin-bottom: 15px;
+    }
+    .banner1 .b1-3 .shopBtn{
+        padding:4px 10px;
+        font-size: 10px;
+    }
+    .banner1 .b1-4 .heading span{
+        font-size: 48px;
+    }
+    .banner1 .b1-3 .heading::after{
+        height: 30px;
+        width:30px;
+        background-position: center;
+        background-size: cover;
+        top: -40px;
+    }
+}
+@media all and (max-width:1000px) {
+    .banner1 .b1-1 .heading span{
+        font-size: 22px;
+
+    }
+    .banner1 .b1-1 .heading {
+        margin-bottom: 8px;
+    }
+    .banner1 .b1-1 .info span{
+        font-size: 8px;
+    }
+    .banner1 .b1-1 .info{
+        margin-bottom: 10px;
+        padding: 5px;
+    }
+    .banner1 .b1-1 .shopBtn {
+        padding: 2px 10px;
+
+    }
+    .banner1 .b1-1 .shopBtn span{
+        padding: 4px 10px;
+        font-size: 8px;
+    }
+    .banner1 .b1-2 .heading span{
+        font-size: 16px;
+    }
+    .banner1 .b1-2 .info{
+        margin-bottom: 10px;
+    }
+    .banner1 .b1-2 .info span{
+        font-size: 8px;
+    }
+    .banner1 .b1-2 .shopBtn{
+        padding: 4px 10px;
+        font-size: 8px;
+    }
+    .banner1 .b1-2 .shopBtn span{
+        padding: 0;
+    }
+    .banner1 .b1-3 .heading span{
+        font-size: 13px;
+    }
+    .banner1 .b1-3 .info span{
+        font-size: 8px;
+    }
+    .banner1 .b1-3 .info{
+        margin-bottom: 8px;
+    }
+    .banner1 .b1-3 .heading{
+        margin-bottom: 0px;
+    }
+    .banner1 .b1-3 .shopBtn{
+        padding:4px 10px;
+        font-size: 10px;
+    }
+    .banner1 .b1-4 .heading span{
+        font-size: 40px;
+        -webkit-text-stroke:1px white;
+    }
+    .banner1 .b1-3 .heading::after{
+        height: 30px;
+        width:30px;
+        background-position: center;
+        background-size: cover;
+        top: -40px;
+    }
+    .container .banner1 .left{
+        margin:0 15px 30px 15px; 
+    }
+    .banner1 .b1-3 .heading::after{
+        height: 30px;
+        width:30px;
+        background-position: center;
+        background-size: cover;
+        top: -30px;
+    }
+}
+@media all and (max-width:600px){
+    .container .banner1{
+        margin-bottom: 20px;
+    }
+}

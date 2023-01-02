@@ -1,0 +1,356 @@
+.container .navbar{
+    width:1500px;
+    height:150px ;
+    display: flex;
+    flex-direction: column;
+    border-bottom: 1px solid var(--borderColor);
+}
+.container .navbar .topBar{
+    color: var(--topBar);
+    height: 30%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid var(--borderColor);
+    font-size: 13px;
+}
+.container .navbar .topBar span{
+    font-weight: 400;
+    
+}
+.container .navbar .topBar .left{
+    display: flex;
+    
+}
+.container .navbar .topBar .btn{
+    transition: 0.3s ease-in-out;
+}
+.container .navbar .topBar .btn:hover{
+    color: var(--headerTextColor);
+}
+.container .navbar .topBar .left .navbarInfo{
+    margin-right: 30px;
+}
+.container .navbar .bottomBar{
+    width: 100%;
+    height: 70%;
+    display: flex;
+
+}
+.container .navbar .bottomBar .logo{
+    min-width: 30%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    font-size: 25px;
+}
+.container .navbar .bottomBar .logo span{
+    font-family: 'Jost', sans-serif;
+    font-weight: 500;
+}
+.container .navbar .bottomBar .bottomNavbar{
+    width: 50%;
+    display: flex;
+    justify-content: flex-start;
+    padding: 25px 20px;
+    /* position: relative; */
+
+}
+.container .navbar .bottomBar .bottomNavbar .option{
+    padding: 0px 30px;
+    margin-right: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.3s ease-in-out;
+    position: relative;
+}
+.container .navbar .bottomBar .bottomNavbar .option i{
+    transition: 0.3s ease-in-out;
+}
+.container .navbar .bottomBar .bottomNavbar .option:hover{
+    background-color:var(--buttonHover);
+    color: white;
+}
+.container .navbar .bottomBar .bottomNavbar .option:hover i{
+    transform: rotate(-90deg);
+}
+.container .navbar .bottomBar .bottomNavbar .option span{
+    font-family: 'Jost', sans-serif;
+    font-weight: 500;
+
+}
+.container .navbar .bottomBar .bottomNavbar .option::after{
+    content: '';
+    position: absolute;
+    top: 105%;
+    left: 50%;
+    width: 0%;
+    height: 1px;
+    background-color: var(--buttonHover) ;
+  
+    transition: 0.3s ease-in-out;
+}
+.container .navbar .bottomBar .bottomNavbar .option:hover::after{
+    width: 100%;
+    left: 0%;
+}
+
+.container .navbar .bottomBar .bottomNavbar .option span{
+    margin-right: 10px;
+}
+.container .navbar .bottomBar .sideNavs{
+    width: 20%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 35px 0px;
+}
+.container .navbar .bottomBar .sideNavs .btn i{
+    transition: 0.5s ease-in-out;
+}
+.container .navbar .bottomBar .sideNavs .btn i:hover{
+    transform: rotateY(180deg);
+}
+.container .navbar .bottomBar .sideNavs .btn .count{
+    background-color: black;
+    border-radius: 50%;
+    color: white;
+    display: inline-block;
+    min-height: 20px;
+    min-width: 20px;
+    text-align: center;
+}
+.container .navbar .bottomBar .sideNavs .search{
+    height: 50px;
+    width: 50px;
+    display: flex;
+    background-color:#f5f5f5;
+    justify-content: center;
+align-items: center;
+border-radius: 50%;
+}
+/* .homeNavbar{
+}
+.homeNavbar::before{
+    position: absolute;
+    content: '';
+    width: 100vh;
+    height: 400px;
+    background-color: red;
+    top: 105%;
+    left: 0;
+} */
+
+.ddHome{
+    z-index: 10;
+    transform-origin: top;
+    position: absolute;
+    top: 145%;
+    width: 150px;
+    left: 0;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: flex-start;
+    flex-direction: column;
+    height: 200px;
+    transform: rotateX(90deg);
+    background-color: rgb(255, 255, 255);
+    border: 1px solid var(--borderColor);
+    transition: 0.3s ease-in-out;
+    color: var(--topBar);
+    font-weight: 200;
+    font-size: 13px;
+    padding: 15px;
+
+    
+}
+.homeNavbar:hover  .ddHome{
+    
+    transform: rotateX(0deg);
+
+}
+.ddShop{
+    z-index: 10;
+    position: absolute;
+    left:0;
+    top: 190px;
+    width: 100vw;
+    min-height: 300px;
+    transform: rotateX(90deg);
+    transition: 0.3s ease-in-out;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    transform-origin: top;
+}
+.ddShop .ddShopInfo{
+    z-index: 10;
+    border: 2px solid var(--borderColor);
+    border-top: none;
+    padding: 20px;
+    width: 1500px;
+    height: 100%;
+    column-count: 3;
+    color: var(--topBar);
+    background-color: white;
+}
+.shopNavbar:hover + .ddShop{
+    transform: rotateX(0deg);
+    
+}
+.ddShop:hover{
+    transform: rotateX(0deg);
+
+}
+.ddShopInfo .listItems{
+    padding: 6px 0;
+    
+    width: 80%;
+}
+
+.ddShopInfo .listHead{
+    margin-top: 10px;
+    padding-bottom: 5px;
+    margin-bottom: 10px;
+    border-bottom: 1px solid var(--borderColor);
+    width: 80%;
+}
+.ddShopInfo .listHead span{ 
+    display: block;
+    font-size: 16px;
+    font-weight: 500;
+    margin-bottom: 5px;
+    color: var(--headerTextColor);
+
+}
+.ddShopInfo .listItems span{
+    font-weight: 400;
+    font-size: 13px;
+}
+@media all and (max-width:1600px) {
+    .container .navbar{
+        width: 90%;
+    }
+    .container .navbar .bottomBar .sideNavs{
+        width: 300px;
+    }
+    .ddShop .ddShopInfo{
+        
+        width: 90%;
+    }
+}
+.container .navbar .bottomBar .mobileNavbarMenu{
+    display: none;
+}
+@media all and (max-width:1000px) {
+    .container .navbar .bottomBar .sideNavs{
+        width: 170px;
+        scale: 0.9;
+        padding: 0;
+        transform-origin: right;
+        color: var(--headerTextColor);
+    }
+    .container .navbar .bottomBar .mobileNavbarMenu{
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+    }
+    .container .navbar .bottomBar .mobileNavbarMenu span{
+        font-family: 'jost';
+        font-weight: bold;
+        font-size: 30px;
+        margin-left: 15px;
+    }
+    .container .navbar{
+        height: 110px;
+    }
+    .container .navbar .topBar{
+        height: 45%;
+    }
+    .container .navbar .bottomBar{
+        height: 55%;
+        justify-content: space-between;
+    }
+    .container .navbar .bottomBar .logo,.container .navbar .bottomBar .bottomNavbar{
+        display: none;
+    }
+    .container .navbar .topBar{
+        font-size: 11px;
+    }
+}
+.navbar .checking{
+    display: none;
+}
+@media all and (max-width:1000px) {
+    .navbar{
+        
+    }
+    .navbar .checking{
+        overflow: hidden;
+        transition: 0.3s ease-in-out;
+        z-index: 990;
+        top: 150px;
+        position: absolute;
+        display: flex;
+        height: 0px;
+        width: 100vw;
+        left: 0;
+        background-color: rgb(255, 255, 255);
+        flex-direction: column;
+        padding: 0px;
+    }
+    .navbar .checking .option{
+        width: 100%;
+        height: 40px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .navbar .checking .option span{
+        font-weight: 400;
+        font-size: 15px;
+        font-family: 'jost';
+        color: var(--headerTextColor);
+
+    }
+    .navbar .checking .option i{
+        color: var(--topBar);
+
+    }
+    
+}
+.navbar .checking .mobileViewMenu{
+    overflow: hidden;
+    transition: 0.3s ease-in-out;
+    height: 0px;
+}
+.navbar .checking .mobileViewMenu .Doption{
+    height: 30px;
+    
+}
+.navbar .checking .mobileViewMenu span{
+    padding: 10px;
+    font-size: 15px;
+    font-family: 'jost';
+    font-weight: 400;
+    color: var(--topBar);
+}
+.navbar .checking .mobileViewMenu .listHead span{
+
+padding: 0 10px;
+margin: 0;
+color: var(--headerTextColor);
+font-size: 20px;
+font-family: 'jost';
+font-weight: 400;}
+.navbar .checking .mobileViewMenu .listItems{
+
+    padding: 2px;
+}
+.navbar .checking .mobileViewMenu .listItems span{
+    font-size: 15px;
+    font-family: 'jost';
+    font-weight: 400;    padding: 0 10px;
+}

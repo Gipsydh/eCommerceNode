@@ -1,0 +1,49 @@
+*{
+    padding:0;
+    margin: 0;
+    box-sizing: border-box;
+}
+:root{
+    --buttonBlackBackground:#222222;
+    --topBar:#666666;
+    --borderColor:#e5e5e5;
+    --buttonHover:#ce465b;
+    --headerTextColor:#111111;
+    --noticeBoardBackground:#191919;
+    --offerBackgrund:#FF6600;
+    --footerBackground:#f1f1f1;
+}
+span{
+    font-family: 'Roboto', sans-serif;
+    font-weight: 200;
+}
+.btn{
+    cursor: pointer;
+}
+.container{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+.container .noticeBoard{
+    background-color: var(--noticeBoardBackground);
+    height: 40px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 15px;
+}
+.container .noticeBoard span{
+    font-weight:500 ;
+
+}
+@media all and (max-width:600px) {
+    .container .noticeBoard span{
+        font-size: 13px;
+    }
+}
+/* ******************************************navbar***************************************************** */

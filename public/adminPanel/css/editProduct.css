@@ -1,0 +1,205 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+a{
+    text-decoration: none;
+    color: rgb(var(--v-theme-leftbar-color),var( --v-theme-opcity-high));
+}
+
+span{
+    font-family: 'Roboto', sans-serif;
+    font-weight: 200;
+}
+.v-theme-dark{
+    --v-theme-background:37,41,60;
+    --v-theme-leftbar-background:47,51,73;
+    --v-theme-leftbar-color:207,211,236;
+    --v-theme-leftbar-opacity:0.68;
+    --v-theme-opcity-high:0.87;
+    --v-theme-leftbar-hover:51,55,77;
+    --v-theme-button-background:115,103,240;
+    --v-theme-button-hover:146, 137, 245;
+    --v-theme-leftbar-shadow:0 0 80px 22px #0000004d;
+    --v-theme-display-shadow:0 0 14px 7px #0003;
+}
+.v-theme-light{
+    --v-theme-background:248,247,250;
+    --v-theme-leftbar-background:255,255,255;
+}
+.v-application{
+    
+}
+.container{
+    background-color: rgb(var(--v-theme-background));
+    min-height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items:center;
+}
+.container .backBtn{
+    color: white;
+    padding: 20px;
+    background-color: rgb(var(--v-theme-button-background));
+    border-radius: 5px;
+    position: absolute;
+    top: 10px;
+    left: 10px;
+
+}
+.container .backBtn:hover{
+    cursor: pointer;
+    background: rgb(var(--v-theme-button-hover));
+}
+.container .card{
+    border-radius: 10px;
+    overflow: scroll;
+   margin: 20px;
+    max-height: 85vh;
+    -ms-overflow-style: none;  /* Internet Explorer 10+ */
+    scrollbar-width: none;  /* Firefox */
+    width:1000px ;
+    background-color: rgb(var(--v-theme-leftbar-background));
+    border: 20px solid rgb(var(--v-theme-leftbar-background));
+}
+.container .card::-webkit-scrollbar { 
+    display: none;  /* Safari and Chrome */
+}
+.container .card form{
+    width: 100%;
+   
+    
+}
+.container .card .inputBox{
+    width: 90%;
+    margin-bottom:15px ;
+    width: 100%;
+   
+    
+
+}
+.container .card .heading,.container .card .heading-2{
+    font-size: 25px;
+    color: rgb(var(--v-theme-leftbar-color),var( --v-theme-opcity-high));
+    font-weight: 500;
+    margin-bottom: 20px;
+    padding-bottom:5px ;
+    border-bottom: 1px solid rgb(var(--v-theme-leftbar-color),var( --v-theme-opcity-high));
+}
+.container .card .productConditions{
+    display: flex;
+
+}
+.container .card .productConditions .inputBox{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.container .card .productConditions .inputBox input{
+    height: 25px;
+    display: inline-block;
+}
+.container .card .inputBox input{
+    width: 100%;
+    padding: 20px;
+    height: 40px;
+    background-color: transparent;
+    outline: none;
+    border: 1px solid rgb(var(--v-theme-leftbar-color),var( --v-theme-leftbar-opacity));
+    border-radius: 5px;
+    font-size: 15px;
+    color: rgb(var(--v-theme-leftbar-color),var( --v-theme-leftbar-opacity));
+}
+.container .card .priceBox{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.container .card .priceBox .inputBox{
+    width: calc(100% / 2 - 20px);
+}
+
+.container .card .inputBox label{
+    display: block;
+    margin-bottom: 5px;
+    color: rgb(var(--v-theme-leftbar-color),var( --v-theme-opcity-high));
+    font-family: 'Roboto', sans-serif;
+    font-weight: 200;
+}
+.container .card input[type=submit]{
+    width: 100%;
+    padding: 10px;
+    margin:10px 0;
+    background-color:rgb(var(--v-theme-button-background));
+    border: none;
+    border-radius: 5px;
+    color: rgb(var(--v-theme-leftbar-color),var( --v-theme-opcity-high));
+
+}
+.container .card input[type=submit]:hover{
+    background-color: rgb(var(--v-theme-button-hover));
+    cursor: pointer;
+}
+@media all and (max-width:800px) {
+    .container .backBtn{
+        top: auto;
+        bottom: 10px;
+        opacity: 0.5;
+    }
+    .container .card{
+
+        width: 100%;
+        margin: 0;
+        min-height: 100vh;
+        border: none;
+        padding: 20px 20px 90px 20px;
+        
+    }
+    .container .card .inputBox label{
+        font-size: 12px;
+    }
+    .container .card .inputBox input{
+        padding: 10px;
+        font-size: 12px;
+    }
+}
+.container .notification{
+    width: 200px;
+    height: 150px;
+    
+    /* top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%); */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(51, 148, 93, 0.419);
+    text-align: center;
+    border-radius: 10px;
+    color: rgb(var(--v-theme-leftbar-color),var( --v-theme-opcity-high));
+    backdrop-filter: blur(10px);
+    z-index: 10;
+}
+.container .screen{
+    background-color: rgba(0, 0, 0, 0.213);
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    pointer-events: none;
+    top: 0;
+    opacity: 0;
+    transition: 0.3s ease-in-out;
+    left: 0;
+}
+.container .notification i{
+    margin-bottom: 10px;
+
+    font-size: 50px;
+    color:rgb(var(--v-theme-leftbar-color),var( --v-theme-opcity-high))
+}

@@ -1,0 +1,280 @@
+.container .trending1{
+    width: 1260px;
+    
+}
+.container .trending1 .header{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    
+}
+.container .trending1 .header .heading{
+
+}
+.container .trending1 .header .heading span{
+    font-size: 48px;
+    font-family: 'jost';
+    font-weight: 500;
+}
+.container .trending1 .header .info{
+
+    margin-bottom: 30px;
+}
+.container .trending1 .header .info span{
+    font-size: 15px;
+    font-family: 'roboto';
+    font-weight: 200;
+    color: var(--topBar);
+}
+.container .trending1 .options{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+
+}
+.container .trending1 .options .card{
+    margin-bottom: 30px;
+    height: 600px;
+    width: calc(100% / 3 - 40px);
+}
+.container .trending1 .options .card .productImg{
+    height: 80%;
+    width: 100%;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+.container .trending1 .options .card .productImg .productState{
+    width: 60px;
+    z-index: 10;
+}
+.container .trending1 .options .card .productImg .productState .states{
+    margin-bottom: 10px;
+    width: 70px;
+    min-height: 30px;
+    background-color: var(--offerBackgrund);
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+
+}
+.container .trending1 .options .card .productImg .productState .states .discount{
+    display: none;
+}
+.container .trending1 .options .card .productImg .productState .states .true{
+    display: inline;
+}
+.container .trending1 .options .card .productImg .productState .blackBG{
+    background-color: var(--noticeBoardBackground);
+}
+.container .trending1 .options .card .productImg .productState .false{
+    display: none;
+}
+
+.container .trending1 .options .card .productImg .productState .states span{
+    font-weight: 400;
+    padding: 5px 0;
+}
+.container .trending1 .options .card .productImg .productImgWrapper{
+    position: absolute;
+    bottom:0;
+    width: 50%;
+    height: 100px;
+    z-index: 11;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    opacity: 0;
+    transition: 0.3s ease-in-out;
+}
+.container .trending1 .options .card .productImg .productImgWrapper .productHoverView{
+    height: 60px;
+    width: 60px;
+    background-color: rgba(0, 0, 0, 0.753);
+    border-radius: 50%;
+    
+    justify-content: center;
+    align-items: center;
+    color: white;
+    display: flex;
+}
+
+.container .trending1 .options .card .productImg:hover .productImgWrapper{
+    opacity: 1;
+}
+.container .trending1 .options .card .productImg img{
+    width:100%;
+
+}
+.container .trending1 .options .card .productImg .productState{
+    position: absolute;
+    top: 0;
+    left: 0%;
+}
+.container .trending1 .options .card .productInfo{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: column;
+    padding-top: 20px;
+    height: 15%;
+}
+.container .trending1 .options .card .productInfo .productName span{
+    font-size: 20px;
+}
+.container .trending1 .options .card .productPrice .true{
+   
+    text-decoration: line-through;
+    font-size: 13px;
+    color: var(--topBar);
+}
+.container .trending1 .options .card .productInfo .productPrice span{
+    font-weight: 300;
+}
+.container .trending1 .options .card .productInfo .newPrice{
+    display: none;
+}
+.container .trending1 .options .card .productInfo .newPricetrue{
+    display: inline;
+    font-weight: bold;
+}
+
+@media all and (max-width:1200px) {
+    .container .trending1{
+        width: 1000px;
+    }
+    .container .trending1 .options .card{
+        height: 450px;
+    }
+    .container .trending1 .options .card .productImg img{
+        scale: 0.7;
+    }
+    .container .trending1 .options .card .productImg .productState .states{
+        width: 50px;
+    }
+    .container .trending1 .options .card .productImg .productState .states span{
+        font-size: 12px;
+        padding: 2px;
+    }
+    .container .trending1 .options .card .productInfo .productName span, .container .trending1 .options .card .productInfo .productPrice span{
+        font-size: 15px;
+    }
+}
+@media all and (max-width:1000px) {
+    .container .trending1 .header .heading span{
+        font-size: 30px;
+        font-family: 'jost';
+        font-weight: 500;
+    }
+    .container .trending1 .header .info span{
+        font-size: 12px;
+    }
+    .container .trending1{
+        width: 750px;
+    }
+    .container .trending1 .options{
+
+        justify-content: space-between;
+    }
+    .container .trending1 .options .card{
+        
+        height: 350px;
+        width: calc(100% / 3 - 20px);
+    }
+    .container .trending1 .options .card .productImg img{
+        scale: 0.5;
+    }
+    .container .trending1 .options .card .productImg .productImgWrapper .productHoverView{
+        height: 40px;
+        width: 40px;
+
+    }
+    .container .trending1 .options .card .productImg .productImgWrapper{
+        opacity: 1;
+    }
+    .container .trending1 .options .card .productImg .productImgWrapper .productHoverView i{
+        font-size: 15px;
+    }
+    .container .trending1 .options .card .productInfo .productName span, .container .trending1 .options .card .productInfo .productPrice span{
+        font-size: 12px;
+    }
+}
+@media all and (max-width:820px) {
+    .container .trending1 .header .heading span{
+        font-size: 25px;
+        font-family: 'jost';
+        font-weight: 400;
+    }
+    .container .trending1 .header .info span{
+        font-size: 10px;
+    }
+    .container .trending1{
+        width: 90%;
+    }
+    .container .trending1 .options .card{
+        
+        height: 400px;
+        width: calc(100% / 2 - 20px);
+    }
+    .container .trending1 .options .card .productImg img{
+        scale: 0.55;
+    }
+}
+@media all and (max-width:500px){
+    .container .trending1 .header .heading span{
+        font-size: 20px;
+        font-family: 'jost';
+        font-weight: 600;
+    }
+    .container .trending1 .header .info span{
+        font-size: 10px;
+        font-weight: 400;
+        
+    }
+    .container .trending1 .options .card .productImg img{
+        scale: 0.35;
+    }
+    .container .trending1 .options .card{
+        
+        height: 250px;
+        width: calc(100% / 2 - 10px);
+    }
+    .container .trending1 .options .card .productImg .productState .states{
+        width: 30px;
+    }
+    .container .trending1 .options .card .productImg .productState .states span{
+        font-size: 6px;
+        padding: 2px;
+    }
+    .container .trending1 .options .card .productInfo .productName span, .container .trending1 .options .card .productInfo .productPrice span{
+        font-size: 15px;
+    }
+    .container .trending1 .options .card .productImg .productState .states{
+        min-height: 10px;
+        margin-bottom: 4px;
+    }
+    .container .trending1 .options .card .productInfo .productName span, .container .trending1 .options .card .productInfo .productPrice span{
+        font-size: 11px;
+    
+    }
+    .container .trending1 .options .card .productImg .productImgWrapper .productHoverView{
+        height: 30px;
+        width: 30px;
+
+    }
+    .container .trending1 .options .card .productImg .productImgWrapper{
+        height: 50px;
+    }
+    .container .trending1 .options .card .productImg .productImgWrapper .productHoverView i{
+        font-size: 10px;
+
+    }
+}

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/editProduct.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Document</title>
+</head>
+<body>
+    <div class="container v-application v-theme-dark">
+        <div class="backBtn">
+            <i class="fa-solid fa-chevron-left"></i>
+        </div>
+        <div class="screen">
+
+            <div class="notification ">
+                <i class="fa-solid fa-circle-check"></i>
+                <span>This product data is updated successfully</span>
+            </div>
+        </div>
+        <div class="card">
+            <div class="heading">
+                <span>Product</span>
+            </div>
+            <form action="">
+                <div class="inputBox">
+                    <label for="p_id">Product Id</label>
+                    <input type="text" class="p_input_id">
+                </div>
+                <div class="inputBox">
+                    <label for="p_name">Product Name</label>
+                    <input type="text" class="p_input_name">
+                </div>
+                <div class="priceBox">
+                    <div class="inputBox">
+                        <label for="p_price">Product Price</label>
+                        <input type="text" class="p_input_price">
+                    </div>
+                    <div class="inputBox">
+                        <label for="p_disc_price">Product Discount Price</label>
+                        <input type="text" class="p_input_discPrice">
+                    </div>
+                </div>
+                <div class="inputBox">
+                    <label for="p_company">Product Company</label>
+                    <select class="p_company">
+
+                    </select>
+                </div>
+                <div class="inputBox">
+                    <label for="p_type">Product Type</label>
+                    <select class="p_type">
+
+                    </select>
+                </div>
+                <div class="inputBox">
+                    <label for="p_price">Product Rating</label>
+                    <input type="number" class="p_rating" min="0" max="5">
+                </div>
+                <div class="heading-2">
+                    <span>Product Condition</span>
+                </div>
+                <div class="productConditions">
+                    <div class="inputBox">
+                        <label for="p_trending">Product Trending</label>
+                        <input type="checkbox" class="p_trending">
+                    </div>
+                    <div class="inputBox">
+                        <label for="p_price">New Product?</label>
+                        <input type="checkbox" class="p_new">
+                    </div>
+                    <div class="inputBox">
+                        <label for="p_price">Out of stock?</label>
+                        <input type="checkbox" class="p_outOfStock">
+                    </div>
+                </div>
+                
+                <input type="submit" class="submitForm">
+            </form>
+            <div class="heading">
+                <span>Add image</span>
+            </div>
+            <form action="/adminPanel/api/v1/adminEditProductImg" method="post" enctype="multipart/form-data">
+                <div class="inputBox">
+                    <label for="p_photo_current" class="p_photo_current">Current image</label>
+                    <img src="" alt="">
+                </div>
+                <div class="inputBox">
+                    <label for="p_photo"></label>
+                    <input type="file" name="image" id="image">
+                </div>
+                <input type="submit" class="submitFormImg">
+
+            </form>
+        </div>
+    </div>
+    <script
+    src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"
+    integrity="sha512-bZS47S7sPOxkjU/4Bt0zrhEtWx0y0CRkhEp8IckzK+ltifIIE9EMIMTuT/mEzoIMewUINruDBIR/jJnbguonqQ=="
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+    ></script>
+    <script src="./script/editProduct-app.js"></script>
+</body>
+</html>
