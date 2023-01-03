@@ -89,8 +89,8 @@ const allProducts=async()=>{
         console.log("error");
         fetch('/adminPanel/api/v1/adminProducts').then((response)=>{
             console.log(response.statusText)
-            // if(response.statusText==="Unauthorized")
-            // window.location="login.html"
+            if(response.status===401)
+            window.location="login.html"
             
         })
 
