@@ -7,7 +7,10 @@ const leftOptions=document.querySelectorAll(".container .leftBar .box .category 
 const leftLogo=document.querySelector(".container .leftBar .heading")
 const leftBar=document.querySelector(".container .leftBar")
 const logoutBtn=document.querySelector(".container .leftBar .logout")
-let collapseFlag=false;
+let collapseFlag=true;
+if(document.querySelector('.container').clientWidth>1000)collapseFlag=false;
+const collapseArrow=document.querySelector(".container .leftBar .collapse")
+collapseArrow.children[0].style.transform="rotate(180deg)"
 logoutBtn.addEventListener('click',function(){
     try {
         axios.post("/adminPanel/api/v1/adminLogOut",{logoutflag:true}).then((response)=>{
@@ -22,8 +25,7 @@ logoutBtn.addEventListener('click',function(){
 collapseBtn.addEventListener('click',function(){
     if(collapseFlag===false){
         collapseFlag=true
-        logoutBtn.style.bottom="70px"
-        logoutBtn.style.right="20px"
+        
         logoutBtn.children[1].innerText=""
         this.children[0].style.transform="rotate(180deg)"
         for(let i=0;i<leftOptions.length;i++){
@@ -36,11 +38,14 @@ collapseBtn.addEventListener('click',function(){
         }
         leftLogo.children[0].innerText="L"
         if(document.querySelector('.container').clientWidth<1000){
-            leftBar.style.left="-300px";
+            leftBar.style.left="-150px";
+        }
+        else{
+            logoutBtn.style.bottom="70px"
+            logoutBtn.style.right="20px"
+            leftBar.style.width="76px";
 
         }
-        else
-        leftBar.style.width="76px";
     }
     else{
         collapseFlag=false
@@ -48,11 +53,16 @@ collapseBtn.addEventListener('click',function(){
         this.children[0].style.transform="rotate(0deg)"
         leftLogo.children[0].innerText="LOGO"
         if(document.querySelector('.container').clientWidth<1000){
-            leftBar.style.left="0px";
+            leftBar.style.left="0px"
+            // logoutBtn.style.right="27px;"
 
         }
-        else
+        else{
+            logoutBtn.style.bottom="20px"
+        logoutBtn.style.right="70px"
+
         leftBar.style.width="260px";
+        }
         setTimeout(() => {
             for(let i=0;i<leftOptions.length;i++){
                 console.log(leftOptions[i])
@@ -61,8 +71,6 @@ collapseBtn.addEventListener('click',function(){
                 leftOptions[i].children[1].style.display="flex"
                 leftOptions[i].children[0].children[1].style.display="inline"
             }
-            logoutBtn.style.bottom="20px"
-        logoutBtn.style.right="70px"
         logoutBtn.children[1].innerText="Log Out"
             
         }, 300);

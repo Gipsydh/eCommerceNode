@@ -4,6 +4,8 @@
     box-sizing: border-box;
 }
 :root{
+    --text-secondary:#777777;
+    --starColor:rgb(254, 197, 0);
     --buttonBlackBackground:#222222;
     --topBar:#666666;
     --borderColor:#e5e5e5;
@@ -12,10 +14,16 @@
     --noticeBoardBackground:#191919;
     --offerBackgrund:#FF6600;
     --footerBackground:#f1f1f1;
+    --background2:#f5f5f5;
+    --h2Color:#333333
 }
 span{
     font-family: 'Roboto', sans-serif;
     font-weight: 200;
+}
+a{
+    text-decoration: none;
+    color:black;
 }
 .btn{
     cursor: pointer;

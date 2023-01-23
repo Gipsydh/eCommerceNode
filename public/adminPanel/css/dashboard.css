@@ -208,7 +208,7 @@ span{
     display: flex;
     justify-content: space-evenly;
     text-align: center;
-    padding-bottom:10px ;
+    padding-bottom:5px ;
     margin-bottom: 5px;
     border-bottom: 1px rgb(var(--v-theme-leftbar-color),var( --v-theme-leftbar-opacity)) solid;
 }
@@ -240,9 +240,30 @@ span{
     }
 }
 @media all and (max-width:1000px) {
+    .container .leftBar .heading span{
+        font-size: 17px;
+    }
+    .container .leftBar .box .category .option{
+        padding: 5px;
+        margin-bottom: 5px;
+    }
+    .container .leftBar .box{
+        width: 100%;
+    }
+    .container .leftBar .box .category .option .optionName span, .container .leftBar .box .category .option .ddArrow i,.container .leftBar .box .category .option i{
+        font-size: 11px;
+    }
+    .container .leftBar{
+        width: 150px;
+       
+    }
+    .container .right .display{
+        height: 100%;
+        width:100%;
+    }
     .container .right .display{
         width: 100%;
-        scale: 0.9;
+        scale: 1;
         transform-origin: top;
     }
     .container{
@@ -251,7 +272,7 @@ span{
     .container .leftBar{
        position: absolute;
        z-index: 10;
-       left: -300px;
+       left: -150px;
     }
     .container .leftBar .collapse{
         right: -70px;
@@ -271,10 +292,15 @@ span{
         width: 100%;
         margin: 10px 0;
     }
+    .container .right .display .card{
+        height:calc(100% - 179px);
+    }
     .container .right .display .card .product span{
         font-size: 12px;
     }
-   
+    .container .leftBar .logout{
+        right: 27px;
+    }
     .container .right .display .pointBar span{
         font-size: 12px;
     }

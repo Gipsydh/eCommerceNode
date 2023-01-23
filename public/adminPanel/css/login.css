@@ -131,8 +131,8 @@ span{
     height: 100%;
     width: 100%;
     background-color: orangered;
-    border-top-left-radius: 50%;
-    border-bottom-left-radius: 50%;
+    /* border-top-left-radius: 50%;
+    border-bottom-left-radius: 50%; */
 }
 .loginContainer .loginLeft .card{
     width: 450px;
@@ -185,7 +185,10 @@ span{
 .loginContainer .loginLeft .card .elm{
     margin-bottom: 10px;
 }
-@media all and (max-width:800px) {
+@media all and (max-width:1000px) {
+    .loginContainer .loginLeft .card form{
+        width: 400px;
+    }
     .loginContainer .errorModuleWrapper .errorModule{
         width:80%;
         height: 150px;
@@ -212,11 +215,11 @@ span{
         width: 100%;
         padding: 0 15px;
         height: 100%;
-        transform: translateY(25%);
+        transform: translateY(150px);
         animation: formFlowUp 1s 1;
         background-color: white;
         justify-content: flex-start;
-        padding-top: calc(50% / 2);
+        padding-top: 100px;
         border-radius: 40px;
         
 
@@ -224,7 +227,7 @@ span{
     .loginContainer .logInHeadingMobile{
         display: block;
         position: absolute;
-        top: 10%;
+        top: 6%;
        
     }
     .loginContainer .logInHeadingMobile span{
@@ -235,11 +238,16 @@ span{
     }
     @keyframes formFlowUp {
         from{
-            transform: translateY(45%);
+            transform: translateY(35%);
         }
         to{
-            transform: translateY(25%);
+            transform: translateY(150px);
         }
+    }
+}
+@media all and (max-width:600px){
+    .loginContainer .loginLeft .card form{
+        width: 95%;
     }
 }
 

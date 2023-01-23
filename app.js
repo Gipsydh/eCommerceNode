@@ -4,6 +4,7 @@ const connectDB=require('./db/connect')
 const homeProducts=require("./routes/homepage")
 const adminPanel=require("./routes/admin");
 const products=require("./routes/product")
+const oneProductShop=require("./routes/user_productDetails")
 const session=require('cookie-session')
 require('dotenv').config()
 app.use(session({
@@ -12,8 +13,9 @@ app.use(session({
     saveUninitialized:true,
 }))
 app.use(express.json())
-app.use("/api/v1",homeProducts)
+app.use("/api/v1",homeProducts,oneProductShop)
 app.use("/adminPanel/api/v1",products)
+
 app.use(express.static('./public'))
 app.use(express.static("./public/adminPanel"))
 const port=process.env.PORT||3000

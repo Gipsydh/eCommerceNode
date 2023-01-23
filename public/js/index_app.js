@@ -13,7 +13,7 @@ const navbarShow=async()=>{
                     flag=true;
                 }
                 trending1.innerHTML+=`
-                <div class="card">
+                <a class="card" href="./productInfo/productInfo.html?prod_id=${productOutput[i]._id}">
                 <div class="productImg">
                     <div class="productState">
                         <div class="states discount ${flag}"><span>${Math.floor(100-(productOutput[i].p_discPrice/productOutput[i].p_price)*100)}%</span></div>
@@ -40,7 +40,7 @@ const navbarShow=async()=>{
                         <span class="newPrice newPrice${flag}">${productOutput[i].p_discPrice}$</span>
                     </div>
                 </div>
-            </div>
+            </a>
                 `
             }
            
@@ -83,17 +83,18 @@ const navbarShow=async()=>{
             <span>${productTypes[i]}</span>
         </div>`
            
-            productOutput.map((product)=>{
-                const{p_type,p_name,p_rating}=product
-                if(p_type===productTypes[i]&&p_rating>=4.5){
-                    shopDDlist.innerHTML+=` <div class="listItems">
-                    <span>${p_name}</span>
-                </div>`
-                shopDDlistMob.innerHTML+=` <div class="listItems">
-                <span>${p_name}</span>
+        productOutput.map((product)=>{
+            const{_id,p_type,p_name,p_rating}=product
+            if(p_type===productTypes[i]&&p_rating>=4.5){
+                shopDDlist.innerHTML+=` <div class="listItems">
+                <a href="/productInfo/productInfo.html?prod_id=${_id}" style="color:#666666";><span>${p_name}</span></a>
             </div>`
-                }
-            })
+            shopDDlistMob.innerHTML+=` <div class="listItems">
+            <a href="/productInfo/productInfo.html?prod_id=${_id}" style="color:#666666";><span>${p_name}</span></a>
+            
+        </div>`
+            }
+        })
         }
         // console.log(productOutput)
         // const allProducts=productOutput.map((product)=>{

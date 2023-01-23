@@ -4,6 +4,7 @@
     <link rel="stylesheet" href="../css/homepage_modules/navbar.css">
     <link rel="stylesheet" href="../css/homepage_modules/footer.css">
     <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="./productInfo.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -23,12 +24,206 @@
         <div class="navbar">
 
         </div>
+        <div class="headerPoster">
+            <div class="posterContainer">
+                <div class="elm productName">
+                    <span>SOMETHING NAME</span>
+                </div>
+                <div class="elm productPath">
+                    <a href="/">
+                        <i class="fa-solid fa-house goHome" style="font-size:12px;"></i>
+
+                    </a>
+                    <i class="fa-solid fa-angle-right" style="font-size:12px; margin:0px 15px;"></i>
+                    <span>Something name</span>
+                </div>
+            </div>
+        </div>
+        <div class="productArea">
+            <div class="productImages">
+
+            </div>
+            <div class="productName">
+                <h1>Product name</h1>
+            </div>           
+            <div class="productInfo">
+                <table class="productDetails">
+                    <tr class="heading">
+                        <td>Brand:</td>
+                        <td class="p_brand">Hewlett-Packard</td>
+                    </tr>
+                    <tr>
+                        <td>Product Code:</td>
+                        <td>P001</td>
+                        
+                    </tr>
+                    <tr>
+                        <td>Reward Points</td>
+                        <td>200</td>
+                    </tr>
+                    <tr>
+                        <td>Availablity</td>
+                        <td class="p_availablity">In Stock</td>
+                    </tr>
+                </table>
+            </div>
+            <div class="review">
+                <div class="rating">
+                    <div class="box blank">
+                        <i class="fa-regular fa-star"></i>
+                        <i class="fa-regular fa-star"></i>
+                        <i class="fa-regular fa-star"></i>
+                        <i class="fa-regular fa-star"></i>
+                        <i class="fa-regular fa-star"></i>
+                    </div>
+                    <div class="slider">
+
+                    </div>
+                    <div class="fill">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                    </div>
+                </div>
+                <div class="revControl">
+                    <div class="countRev">
+                        <i class="fa-solid fa-message"></i>
+                        <span>0 reviews</span>
+                    </div>
+                    <div class="countRev writeRev">
+                        <i class="fa-solid fa-pen"></i>
+                        <span>Write a review</span>
+                    </div>
+                </div>
+            </div>
+            <div class="price">
+                <span class="mainPrice" style="font-family:jost;font-weight:bold;font-size:16px;">$100.00</span>
+                <span class="discPrice" style="font-family:jost;font-weight:bold;font-size:13px; color:var(--topBar);text-decoration:line-through;text-decoration-thickness:1px;">$200.00</span>
+            </div>
+            <div class="deleveryDate">
+                <label for="deleveryDate">
+                    <span>Delevery Date</span>
+                </label>
+                <div class="deleveryInput">
+                    <input type="date">
+                    <div class="calender">
+                        <i class="fa-regular fa-calendar" style="color:var(--topBar);"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="actions">
+                <div class="quantity">
+                    <div class="minus qnt-btn qnt-elm" onmousedown="return false" onselectstart="return false" onclick="productQuantity(this)"><span>-</span></div>
+                    <div class="counter qnt-elm" style="font-size: 14px; cursor: default;"><span>1</span></div>
+                    <div class="plus qnt-btn qnt-elm" onmousedown="return false" onselectstart="return false" onclick="productQuantity(this)" ><span>+</span></div>
+                </div>
+                <div class="buyingOptn">
+                    <div class="btn addToCart" style="margin:0 20px;">
+                        <i class="fa-solid fa-cart-shopping"></i>
+                        <span>Add to cart</span>
+                    </div>
+                    <div class="btn buyBtn">
+                        <span>Buy Now</span>
+                    </div>
+                </div>
+            </div>
+            <div class="moreOptns">
+                <div class="elm">
+                    <i class="fa-regular fa-heart"></i>
+                    <span>Add to Wish List</span>
+                </div>
+                <div class="elm">
+                    <i class="fa-solid fa-right-left"></i>
+                    <span>Compare this Product</span>
+                </div>
+                <div class="elm">
+                    <i class="fa-brands fa-whatsapp"></i>
+                    <span>Ask Questions</span>
+                </div>
+            </div>
+            <div class="description">
+                <div class="header">
+                    <div class="btn descBtn">
+                        <span>Description</span>
+                    </div>
+                    <div class="btn descBtn">
+                        <span>Specification</span>
+                    </div>
+                    <div class="btn descBtn">
+                        <span>Reviews (0)</span>
+                    </div>
+                </div>
+                <div class="descBox">
+                    <div class="information">
+                        <div class="infoHeader">
+                            <p>nim soluta eaque earum accusantium, voluptatem veniam quibusdam molestiae ratione tempora amet delectus! Molestias odio nemo repellat earum laborum optio excepturi commodi velit quod dicta? Quisquam esse nihil assumenda magni ex aliquid!</p>
+                        </div>
+                        <div class="mainInfo leftTemplate">
+                            <div class="left">
+                                <img src="../resources/p001.jpg" alt="">
+                            </div>
+                            <div class="right">
+                                <div class="semiHeader">
+                                    <p>Lorem ipsum dolor sit amet consectetur.</p>
+                                    
+                                </div>
+                                <h2>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus</h2>
+                                <p style="margin-bottom: 10px;">Lorem  nemouae distinctio inventore odio aliquid alias laboriosam maxime, itaque officiis tenetur dolor molestias enim aliquam architecto necessitatibus quaerat rerum doloremque molestiae asperiores repudiandae deleniti. Suscipit facere quos culpa harum autem sit.</p>
+                            </div>
+                        </div>
+                        <div class="mainInfo rightTemplate">
+                            <div class="left">
+                                <img src="../resources/p001.jpg" alt="">
+                            </div>
+                            <div class="right">
+                                <div class="semiHeader">
+                                    <p>Lorem ipsum dolor sit amet consectetur.</p>
+                                    
+                                </div>
+                                <h2>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus</h2>
+                                <p style="margin-bottom: 10px;">Lorem  nemouae distinctio inventore odio aliquid alias laboriosam maxime, itaque officiis tenetur dolor molestias enim aliquam architecto necessitatibus quaerat rerum doloremque molestiae asperiores repudiandae deleniti. Suscipit facere quos culpa harum autem sit.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="specification"></div>
+                    <div class="review"></div>
+                </div>
+            </div>
+            <div class="rel-nav">
+                <div class="moveLeft sliderMove">
+                    <i class="fa-solid fa-chevron-left"></i>
+                </div>
+                <div class="moveRight sliderMove">
+                    <i class="fa-solid fa-chevron-right"></i>
+                </div>
+                <div class="relativeProduct">
+                    
+                    <div class="heading">
+                        <h3>Related Product</h3>
+                    </div>
+                    <div class="scrollOptns">
+                       
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
         <div class="footer">
             
         </div>
     </div>
+
+    <script
+    src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"
+    integrity="sha512-bZS47S7sPOxkjU/4Bt0zrhEtWx0y0CRkhEp8IckzK+ltifIIE9EMIMTuT/mEzoIMewUINruDBIR/jJnbguonqQ=="
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+    ></script>
     <script src="../js/index.js"></script>
-    <script src="../js/navbar.js"></script>
+    <script src="./productInfo.js"></script>
     <script src="../js/footer.js"></script>
+    <script src="../js/navbar.js"></script>
 </body>
 </html>
