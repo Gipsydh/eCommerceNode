@@ -4,6 +4,7 @@
     <link rel="stylesheet" href="../css/homepage_modules/navbar.css">
     <link rel="stylesheet" href="../css/homepage_modules/footer.css">
     <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/headerPoster.css">
     <link rel="stylesheet" href="./productInfo.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -145,18 +146,18 @@
             </div>
             <div class="description">
                 <div class="header">
-                    <div class="btn descBtn">
+                    <div class="btn descBtn btnDescription descHover">
                         <span>Description</span>
                     </div>
-                    <div class="btn descBtn">
+                    <div class="btn descBtn btnSpcification descHover">
                         <span>Specification</span>
                     </div>
-                    <div class="btn descBtn">
+                    <div class="btn descBtn btnReview descHover">
                         <span>Reviews (0)</span>
                     </div>
                 </div>
                 <div class="descBox">
-                    <div class="information">
+                    <div class="information descElm">
                         <div class="infoHeader">
                             <p>nim soluta eaque earum accusantium, voluptatem veniam quibusdam molestiae ratione tempora amet delectus! Molestias odio nemo repellat earum laborum optio excepturi commodi velit quod dicta? Quisquam esse nihil assumenda magni ex aliquid!</p>
                         </div>
@@ -187,9 +188,61 @@
                             </div>
                         </div>
                     </div>
-                    <div class="specification"></div>
-                    <div class="review"></div>
+                    <div class="specification descElm">
+                        <table class="descTable">
+                            <tr>
+                                <th colspan="3">
+
+                                    <span>heading</span>
+                                </th>
+                            </tr>
+                        <tr>
+                            <td colspan="2"><span>val1</span></td>
+                            <td colspan="1"><span>val2</span></td>
+                        </tr>
+                        </table>
+                        
+                    </div>
+                    <div class="review descElm">
+                        <div class="reviewTemplate">
+                            <div class="currReviews">
+                                <span>There are no reviews for this product</span>
+                            </div>
+                            <div class="reviewForm">
+                                <form action="">
+                                    <div class="heading">
+                                        <span>Write a review</span>
+                                    </div>
+                                    <div class="section">
+                                        <label for="name"><span class="required">*</span>Your Name</label>
+                                        <input type="text" id="reviewName">
+                                    </div>
+                                    <div class="section">
+                                        <label for="review"><span class="required">*</span>Your Review</label>
+                                        <textarea name="" id="userReview" cols="30" rows="10"></textarea>
+                                    </div>
+                                    <div class="section ratingBox">
+                                        <label for="rating"><span class="required">*</span> Rating</label>
+                                        <div class="optns">
+
+                                            <span>Bad</span>
+                                            <input type="radio" name="inputRating">
+                                            <input type="radio" name="inputRating">
+                                            <input type="radio" name="inputRating">
+                                            <input type="radio" name="inputRating">
+                                            <input type="radio" name="inputRating">
+                                            <span>Good</span>
+                                        </div>
+                                    </div>
+                                    <div class="submitBtn">
+                                        <input type="Submit" value="submit">
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
                 </div>
+                
             </div>
             <div class="rel-nav">
                 <div class="moveLeft sliderMove">

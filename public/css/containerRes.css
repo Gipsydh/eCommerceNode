@@ -1,0 +1,24 @@
+.container .productArea{
+    width: 1260px;
+}
+@media all and (max-width:1300px){
+    .container .productArea{
+        width:1170px;
+        padding: 0 15px;
+    }
+    @media all and (max-width:1200px){
+        .container .productArea{
+            width: 970px;
+        }
+    }
+}
+@media all and (max-width:1000px){
+    .container .productArea{
+        width: 750px;
+    }
+}
+@media all and (max-width:760px) {
+    .container .productArea{
+        width:100%;
+    }
+}

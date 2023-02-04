@@ -1,0 +1,115 @@
+a{
+    text-decoration: none;
+    color: black;
+}
+*{
+    scroll-behavior: smooth;
+    
+}
+
+h1{
+   
+    color:var(--headerTextColor)
+}
+.navbar .checking{
+    top: 109px;
+}
+.ddShop{
+    top:149px;
+}
+h2{
+    font-family: roboto;
+    color: var(--h2Color);
+    font-size: 24px;
+    letter-spacing: 1px;
+    font-weight: 500;
+    line-height: 1.6;
+    
+}
+p{
+    font-family: roboto;
+    color: var(--text-secondary);
+    font-size: 14px;
+    letter-spacing: 1px;
+    line-height: 24px;
+}
+.container .productArea{
+    min-height: 600px;
+}
+.container .productArea{
+    display: flex;
+    height: fit-content;
+
+}
+.container .productArea .elm{
+    width: 50%;
+    margin: 0 15px;
+    border: 1px solid var(--borderColor);
+    height: fit-content;
+    padding: 19px;
+}
+.container .productArea .signIn .section{
+    display: flex;
+    flex-direction: column;
+}
+.container .productArea .signIn .section input{
+    padding: 12px;
+    border: 1px solid var(--borderColor);
+transition: 0.2s ease-in-out;
+font-family: roboto;
+    margin-bottom: 5px;
+
+}
+.container .productArea .signIn .section input:focus{
+    outline: none;
+    border: 1px solid var(--text-secondary);
+}
+.container .productArea .signIn .section label{
+    margin: 7px 0 10px 0;
+    font-family: roboto;
+    font-weight: 500;
+    font-size: 13px;
+    color: #222;
+}
+
+.container .productArea .submitBtn input,.container .productArea .signUpBtn{
+    margin-top: 10px;
+    cursor: pointer;
+    padding: 12px 24px;
+    background-color: var(--buttonBlackBackground);
+    border: none;
+    color: white;
+    letter-spacing: 1px;
+    font-family: roboto;
+    font-weight: 400;
+    width: fit-content;
+    font-size: 13px;
+    transition: 0.3s ease-in-out;
+}
+.container .productArea .submitBtn input:hover,.container .productArea .signUpBtn:hover{
+    background:var(--buttonHover) ;
+}
+.container .productArea .signUpBtn span{
+    letter-spacing: 1px;
+    font-family: roboto;
+    font-weight: 400;
+    font-size: 13px;
+
+}
+.container .productArea .signIn .section{
+    margin-bottom: 15px;
+}
+.container .productArea .signIn .section label{
+    color: var(--text-secondary);
+    letter-spacing: 1px;
+}
+@media all and (max-width:765px) {
+    .container .productArea{
+        flex-direction: column;
+    }
+    .container .productArea .elm{
+        width: 100%;
+        margin: 0;
+        margin-bottom: 20px;
+    }
+}

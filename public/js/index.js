@@ -13,7 +13,7 @@ document.querySelector('.navbar').outerHTML=`  <div class="navbar">
     <div class="right">
         <div class="accounts btn">
             <i class="fa-solid fa-user"></i>
-            <span>My Account</span>
+            <a href="../login"><span>My Account</span></a>
         </div>
     </div>
 </div>

@@ -1,0 +1,62 @@
+.container .headerPoster{
+    width: 100%;
+    background-image: url("../resources/banner1-1.jpg");
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 50px 0;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    transition: 0.1s ease-in-out;
+    margin-bottom: 50px;
+}
+.container .headerPoster .posterContainer{
+    width: 1260px;
+    display: flex;
+    justify-content: space-between;
+}
+.container .headerPoster .posterContainer .productName span{
+    font-family: jost;
+    font-weight: 600;
+    letter-spacing: 2px;
+}
+.container .headerPoster .posterContainer .productPath span{
+    font-family: roboto;
+    font-weight: 400;
+    letter-spacing: 1px;
+    font-size: 13px;
+}
+.container .headerPoster .posterContainer .goHome{
+    transition: 0.3s ease-in-out;
+}
+.container .headerPoster .posterContainer .goHome:hover{
+    color: var(--buttonHover);
+    cursor: pointer;
+}
+@media all and (max-width:1300px) {
+    .container .headerPoster .posterContainer{
+        width: 1170px;
+    }
+}
+@media all and (max-width:1200px) {
+    .container .headerPoster .posterContainer{
+        width: 970px;
+    }
+}
+@media all and (max-width:1000px) {
+    .container .headerPoster .posterContainer{
+        width: 750px;
+    }
+}
+@media all and (max-width:770px) {
+    .container .headerPoster .posterContainer{
+        width: 100%;
+        flex-direction: column;
+        align-items: center;
+        
+    }
+    .container .headerPoster{
+        padding:15px 0;
+    }
+}

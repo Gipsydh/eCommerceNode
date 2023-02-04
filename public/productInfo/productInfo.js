@@ -23,11 +23,16 @@ const getOneProduct=async()=>{
             let p_discPrice="none"
             if(response.data[0].p_discPrice){
                 p_discPrice="static"
+                document.querySelector(".container .productArea .price .mainPrice").innerText=`$${response.data[0].p_discPrice}`
+
             }
-            document.querySelector(".container .productArea .price .mainPrice").innerText=`$${response.data[0].p_price}`
+            else{
+                document.querySelector(".container .productArea .price .mainPrice").innerText=`$${response.data[0].p_price}`
+
+            }
             document.querySelector(".container .headerPoster .posterContainer .productName span").innerHTML=`${response.data[0].p_name.toUpperCase()}`
             document.querySelector(".container .headerPoster .posterContainer .productPath span").innerHTML=`${response.data[0].p_name}`
-            document.querySelector(".container .productArea .price .discPrice").innerText=`$${response.data[0].p_discPrice}`
+            document.querySelector(".container .productArea .price .discPrice").innerText=`$${response.data[0].p_price}`
             document.querySelector(".container .productArea .price .discPrice").style.display=p_discPrice
             
             await axios.get("/api/v1/relatedProduct",{
@@ -140,6 +145,7 @@ NodeList.prototype.addEventListener = function (event_name, callback, useCapture
         this[i].addEventListener(event_name, callback, useCapture);
     }
 };
+
 const headerPoster=document.querySelector(".headerPoster")
 window.addEventListener('scroll',function(e){
     // console.log(window.scrollY);
@@ -186,5 +192,51 @@ scrollBox.addEventListener('scroll',(e)=>{
 
     }
 })
-// ........................api.............................
+const descElm=document.querySelectorAll(".container .productArea .description .descBox .descElm")
+const descNavBtn=document.querySelectorAll(".container .productArea .description .header .descBtn")
+for(let i=0;i<descElm.length;i++){
+    descElm[i].style.display="none"
+}
+descNavBtn[0].classList.add("descCurrInd")
 
+descElm[0].style.display="block"
+descNavBtn.addEventListener('click',function(){
+    
+    if(this.classList.contains("btnDescription")){
+        for(let i=0;i<descElm.length;i++){
+            descElm[i].style.display="none"
+            descNavBtn[i].classList.remove("descCurrInd")
+        }
+        descElm[0].style.display="block"
+        descNavBtn[0].classList.add("descCurrInd")
+
+    }
+    else if(this.classList.contains("btnSpcification")){
+        for(let i=0;i<descElm.length;i++){
+            descElm[i].style.display="none"
+            descNavBtn[i].classList.remove("descCurrInd")
+
+        }
+        descElm[1].style.display="block"
+        descNavBtn[1].classList.add("descCurrInd")
+
+    }
+    else if(this.classList.contains("btnReview") ){
+        for(let i=0;i<descElm.length;i++){
+            descElm[i].style.display="none"
+            descNavBtn[i].classList.remove("descCurrInd")
+
+        }
+        descNavBtn[2].classList.add("descCurrInd")
+
+        descElm[2].style.display="block"
+       
+    }
+    
+})
+const revBtn=document.querySelector(".container .productArea .review .revControl .writeRev")
+revBtn.addEventListener('click',function(){
+    document.body.scrollTop=document.querySelector(".container .productArea .description").offsetTop;
+    document.documentElement.scrollTop=document.querySelector(".container .productArea .description").offsetTop;
+    document.querySelector(".container .productArea .description .header .btnReview").click();
+})

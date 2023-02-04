@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/containerRes.css">
+    <link rel="stylesheet" href="../css/headerPoster.css">
+    <link rel="stylesheet" href="../css/homepage_modules/navbar.css">
+    <link rel="stylesheet" href="../css/homepage_modules/footer.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+    href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;1,100;1,300;1,400;1,500&display=swap"
+    rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css?family=Jost:300,300italic,400,500,500italic,600,400italic,600italic,700,700italic,800,800italic" rel="stylesheet" type="text/css">    
+    <link rel="stylesheet" href="./signUp.css">
+</head>
+<body>
+    <div class="container">
+        <div class="navbar">
+
+        </div>
+        <div class="headerPoster">
+            <div class="posterContainer">
+                <div class="elm productName">
+                    <span>REGISTER</span>
+                </div>
+                <div class="elm productPath">
+                    <a href="/">
+                        <i class="fa-solid fa-house goHome" style="font-size:12px;"></i>
+
+                    </a>
+                    <i class="fa-solid fa-angle-right" style="font-size:12px; margin:0px 15px;"></i>
+                    <a href="./index.html">
+                    <span>Account</span>
+                    </a>
+                    <i class="fa-solid fa-angle-right" style="font-size:12px; margin:0px 15px;"></i>
+                    <span>Register</span>
+                </div>
+            </div>
+        </div>
+        
+        <div class="productArea">
+            <div class="duplicateUser" style="display:none;padding:10px 15px;margin-bottom:15px;width:100%;text-align: center; background-color: #f2dede;border:1px solid #ebccd1">
+                <span style="font-size:13px;font-weight: 400;color:#a94442">This E-Mail is already in use. Try different one</span>
+            </div>
+            <div class="added" style="display:none;padding:10px 15px;margin-bottom:15px;width:100%;text-align: center; background-color: #e6f2de;border:1px solid #dbebcc">
+                <span style="font-size:13px;font-weight: 400;color:#50a942">added successfully</span>
+            </div>
+            <div class="wrongOTP" style="display:none;padding:10px 15px;margin-bottom:15px;width:100%;text-align: center; background-color: #f2dede;border:1px solid #ebccd1">
+                <span style="font-size:13px;font-weight: 400;color:#a94442">OTP is not matching</span>
+            </div>
+            <p class="getInfo">If you already have an account with us, please login at the login page.</p>
+            <div class="personalDetails">
+                <div class="header getInfo">
+                    <h2>Your Personal Details</h2>
+                </div>
+                <div class="field getInfo">
+                    <div class="bind">
+                        <div class="label">
+                            <label for="">
+                                <span>First Name</span>
+                            </label>
+                        </div>
+                        <div class="input">
+                            <input type="text" placeholder="First Name" id="firstName" class="elm">
+                            <span class="errorMsg empty">First Name cannot be empty</span>
+
+                        </div>
+                    </div>
+                    <div class="bind">
+                        <div class="label">
+                            <label for="">
+                                <span>Last Name</span>
+                            </label>
+                        </div>
+                        <div class="input">
+                            <input type="text" placeholder="Last Name" id='lastName' class="elm">
+                            <span class="errorMsg empty">Last Name cannot be empty</span>
+
+                        </div>
+                    </div>
+                    <div class="bind">
+                        <div class="label">
+                            <label for="">
+                                <span>E-Mail</span>
+                            </label>
+                        </div>
+                        <div class="input">
+                            <input type="text" placeholder="E-Mail" id="email" class="elm">
+                            <span class="errorMsg empty">E-Mail cannot be empty</span>
+
+                        </div>
+                    </div>
+                    <div class="bind">
+                        <div class="label">
+                            <label for="">
+                                <span>Telephone</span>
+                            </label>
+                        </div>
+                        <div class="input">
+                            <input type="text" placeholder="Telephone" id="telephone" class="elm">
+                            <span class="errorMsg empty">Telephone cannot be empty</span>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="header getInfo">
+                    <h2>Your Password</h2>
+                </div>
+                <div class="field getInfo">
+                    
+                    <div class="bind">
+                        <div class="label">
+                            <label for="">
+                                <span>Password</span>
+                            </label>
+                        </div>
+                        <div class="input">
+                            <input type="password" placeholder="Password" id="password" class="elm">
+                            <span class="errorMsg passNotEqual">Password and Confirm Password should be same</span>
+                            <span class="errorMsg empty">Password cannot be empty</span>
+
+                        </div>
+                    </div>
+                    <div class="bind">
+                        <div class="label">
+                            <label for="">
+                                <span>Confirm Password</span>
+                            </label>
+                        </div>
+                        <div class="input">
+                            <input type="password" placeholder="Confirm Password" id="cPassword" class="elm">
+                            <span class="errorMsg empty">Confirm Password cannot be empty</span>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="field getOTP">
+                    <div class="bind">
+                        <div class="label">
+                            <label for="">
+                                <span>Place your OTP here (provided in your email) </span>
+                            </label>
+                        </div>
+                        <div class="input">
+                            <input type="text" placeholder="Your OTP" id="OTP" class="">
+                            <span class="errorMsg empty">OTP cannot be empty</span>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="continue">
+                <div class="continueBtn">
+                    <span>continue</span>
+                </div>
+            </div>
+        </div>
+        <div class="footer">
+            
+        </div>
+    </div>
+
+
+    <script
+    src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"
+    integrity="sha512-bZS47S7sPOxkjU/4Bt0zrhEtWx0y0CRkhEp8IckzK+ltifIIE9EMIMTuT/mEzoIMewUINruDBIR/jJnbguonqQ=="
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+    ></script>
+    <script src="../js/index.js"></script>
+    <script src="../js/footer.js"></script>
+    <script src="../js/navbar.js"></script>
+    <script src="./signUp.js"></script>
+
+</body>
+</html>
