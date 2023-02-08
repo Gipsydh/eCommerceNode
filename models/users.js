@@ -23,6 +23,7 @@ const usersSchema=new mongoose.Schema({
         required:[true,"password cannot be empty"]
 
     }
+
 })
 
 module.exports=mongoose.model('users',usersSchema)

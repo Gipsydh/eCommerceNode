@@ -3,13 +3,23 @@
 const signUpBtn=document.querySelector(".continueBtn")
 let flag2=false
 let flag3=false
+let obj={}
 signUpBtn.addEventListener('click',function(){
+    if(signUpBtn.children[0].innerText==="Go Home"){
+        console.log("yes")
+        window.location.href="/";
+    }
     if(flag2===true){
         yourOTP=document.querySelector("#OTP").value
         if(yourOTP.length===6){
-            axios.post("/api/v1/signIn/verifyOTP",{"currOTP":yourOTP}).then((response)=>{
+            document.querySelector(".getOTP").style.opacity=0.5
+            document.querySelector(".getOTP input").setAttribute('readonly',true)
+            axios.post("/api/v1/signIn/verifyOTP",{obj,"currOTP":yourOTP}).then((response)=>{
                document.querySelector(".added").style.display="block"
                document.querySelector(".wrongOTP").style.display="none"
+               console.log(signUpBtn)
+               signUpBtn.children[0].innerText="Go Home"
+
 
             }).catch((error)=>{
                 document.querySelector(".added").style.display="none"
@@ -38,7 +48,7 @@ signUpBtn.addEventListener('click',function(){
     console.log(flag)
     if(flag){
         console.log("working")
-        const obj={
+        obj={
             "first_name":document.querySelector("#firstName").value,
             "last_name":document.querySelector("#lastName").value,
             "email":document.querySelector("#email").value,

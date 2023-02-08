@@ -55,17 +55,28 @@
             <div class="signIn elm">
                 <h2 style="margin-bottom: 10px;">Returning Customer</h2>
                 <p style="margin-bottom: 10px;">I am a returning customer</p>
+                <div class="wrongPass loginFlag" style="display:none;padding:10px 15px;margin-bottom:15px;width:100%;text-align: center; background-color: #f2dede;border:1px solid #ebccd1">
+                    <span style="font-size:13px;font-weight: 400;color:#a94442">Wrong Email or Password</span>
+                </div>
+                <div class="loggedIn loginFlag" style="display:none;padding:10px 15px;margin-bottom:15px;width:100%;text-align: center; background-color: #e6f2de;border:1px solid #dbebcc">
+                    <span style="font-size:13px;font-weight: 400;color:#50a942">You are logged in. Redirecting to your profile shortly...</span>
+                </div>
                 <form action="">
                     <div class="section">
                         <label for="email">E-Mail Address</label>
-                        <input type="text" placeholder="E-Mail Address">
+                        <input type="text" placeholder="E-Mail Address" id="email" class="loginElm">
+                        <span class="errorMsg empty">E-Mail cannot be empty</span>
+
                     </div>
                     <div class="section">
                         <label for="password">Password</label>
-                        <input type="password" placeholder="Password">
+                        <input type="password" placeholder="Password" id="password" class="loginElm">
+                        <span class="errorMsg empty">Password cannot be empty</span>
+
                     </div>
-                    <div class="btn submitBtn signIn">
+                    <div class="btn submitBtn signIn loginSubmitBtn">
                         <input type="submit" value="Login">
+
                     </div>
                 </form>
             </div>
@@ -84,7 +95,9 @@
     ></script>
     <script src="../js/index.js"></script>
     <script src="../js/footer.js"></script>
+    <script src="../js/navbar_app.js"></script>
     <script src="../js/navbar.js"></script>
+    <script src="./login.js"></script>
 
 </body>
 </html>
