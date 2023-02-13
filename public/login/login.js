@@ -1,6 +1,8 @@
+
 const loginBtn=document.querySelector(".container .productArea .loginSubmitBtn input")
 const errorMsg=document.querySelectorAll(".errorMsg")
 const loginElm=document.querySelectorAll(".loginElm")
+
 let allFill=true;
 loginBtn.addEventListener('click',(e)=>{
     
@@ -24,7 +26,6 @@ loginBtn.addEventListener('click',(e)=>{
             "email":document.getElementById("email").value,
             "password":document.getElementById("password").value
         }
-        console.log(obj)
        sendReq(obj);
        
     }
@@ -37,10 +38,11 @@ const sendReq=async(obj)=>{
     }
     try {
             
-        const resp=await axios.post("/api/v1/signIn",obj).then((response)=>{
-         console.log(response.data)
-         console.log(response)
+        await axios.post("/api/v1/signIn",obj).then((response)=>{
+            
             document.querySelector(".loggedIn").style.display="block"
+          
+            window.location.href="../userProfile/userProfile.html"
         }).catch((err)=>{
             if(err.response.status===401){
                 document.querySelector(".wrongPass").style.display="block"

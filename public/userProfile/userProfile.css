@@ -1,0 +1,45 @@
+.navbar .checking{
+    top: 109px;
+}
+.ddShop{
+    top:149px;
+}
+.productArea span{
+    letter-spacing: 1px;
+}
+.productArea .box{
+    padding: 5px;
+    margin-bottom: 20px;
+    border:1px solid var(--borderColor)
+}
+.productArea .box .header{
+    padding: 5px 8px;
+    margin-bottom: 6px;
+    background-color: var(--footerBackground);
+    
+}
+.productArea .box .header span{
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 20px;
+}
+.productArea .box .body{
+    padding: 8px;
+}
+.productArea .box .body .boxOption{
+    padding: 5px 0;
+
+}
+.productArea .box .body .boxOption span{
+    cursor: pointer;
+}
+.productArea .box .body span{
+    font-weight: 400;
+    font-size: 14px;
+    color: var(--topBar);
+    transition: 0.1s ease-in-out;
+
+}
+.productArea .box .body span:hover{
+    color: var(--buttonBlackBackground);
+}

@@ -9,10 +9,11 @@ const session=require('cookie-session')
 const userLogin=require("./routes/userLogin")
 require('dotenv').config()
 app.use(session({
-    secret:"xyz234$%`",
+    secret:process.env.SESSION_SECRET,
     resave:false,
     saveUninitialized:true,
 }))
+
 app.use(express.json())
 app.use("/api/v1",homeProducts,oneProductShop,userLogin)
 app.use("/adminPanel/api/v1",products)

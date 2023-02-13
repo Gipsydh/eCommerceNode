@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="../css/homepage_modules/navbar.css">
     <link rel="stylesheet" href="../css/homepage_modules/footer.css">
     <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="./userProfile.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -19,7 +20,6 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css?family=Jost:300,300italic,400,500,500italic,600,400italic,600italic,700,700italic,800,800italic" rel="stylesheet" type="text/css">    
-    <link rel="stylesheet" href="./login.css">
 </head>
 <body>
     <div class="container">
@@ -37,48 +37,32 @@
 
                     </a>
                     <i class="fa-solid fa-angle-right" style="font-size:12px; margin:0px 15px;"></i>
-                    <span>Something name</span>
+                    <span>Account</span>
                 </div>
             </div>
         </div>
         <div class="productArea">
-            <div class="signUp elm">
-                <h2>New Customer</h2>
-                <p style="margin-bottom: 10px;">Register Account</p>
-                <p>By creating an account you will be able to shop faster, be up to date on an order's status, and keep track of the orders you have previously made.</p>
-                <a href="./signUp.html" style="color: white;">
-                <div class="btn submitBtn signUpBtn">
-                   <span>Continue</span>
+            <div class="box">
+                <div class="header boxElm">
+                    <span>My Account</span>
                 </div>
-            </a>
-            </div>
-            <div class="signIn elm">
-                <h2 style="margin-bottom: 10px;">Returning Customer</h2>
-                <p style="margin-bottom: 10px;">I am a returning customer</p>
-                <div class="wrongPass loginFlag" style="display:none;padding:10px 15px;margin-bottom:15px;width:100%;text-align: center; background-color: #f2dede;border:1px solid #ebccd1">
-                    <span style="font-size:13px;font-weight: 400;color:#a94442">Wrong Email or Password</span>
+                <div class="body boxElm">
+                    <div class="boxOption">
+                        <a href=""><span>Edit your account information</span></a>
+                    </div>
+                    <div class="boxOption">
+                        <a href=""><span>Change your password</span></a>
+                    </div>
+                    <div class="boxOption">
+                        <a href=""><span>Modify your address book entries</span></a>
+                    </div>
+                    <div class="boxOption">
+                        <a href=""><span>Wish List</span></a>
+                    </div>
+                    <div class="boxOption logOut">
+                        <span>Log Out</span>
+                    </div>
                 </div>
-                <div class="loggedIn loginFlag" style="display:none;padding:10px 15px;margin-bottom:15px;width:100%;text-align: center; background-color: #e6f2de;border:1px solid #dbebcc">
-                    <span style="font-size:13px;font-weight: 400;color:#50a942">You are logged in. Redirecting to your profile shortly...</span>
-                </div>
-                <form action="">
-                    <div class="section">
-                        <label for="email">E-Mail Address</label>
-                        <input type="text" placeholder="E-Mail Address" id="email" class="loginElm">
-                        <span class="errorMsg empty">E-Mail cannot be empty</span>
-
-                    </div>
-                    <div class="section">
-                        <label for="password">Password</label>
-                        <input type="password" placeholder="Password" id="password" class="loginElm">
-                        <span class="errorMsg empty">Password cannot be empty</span>
-
-                    </div>
-                    <div class="btn submitBtn signIn loginSubmitBtn">
-                        <input type="submit" value="Login">
-
-                    </div>
-                </form>
             </div>
         </div>
         <div class="footer">
@@ -87,7 +71,6 @@
     </div>
 
 
-   
     <script
     src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"
     integrity="sha512-bZS47S7sPOxkjU/4Bt0zrhEtWx0y0CRkhEp8IckzK+ltifIIE9EMIMTuT/mEzoIMewUINruDBIR/jJnbguonqQ=="
@@ -98,7 +81,7 @@
     <script src="../js/footer.js"></script>
     <script src="../js/navbar_app.js"></script>
     <script src="../js/navbar.js"></script>
-    <script src="./login.js"></script>
+    <script src="./userProfile.js"></script>
 
 </body>
 </html>

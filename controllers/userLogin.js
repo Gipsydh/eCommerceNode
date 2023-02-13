@@ -1,9 +1,28 @@
 const users=require("../models/users")
 const usersotps=require("../models/usersotp")
 const bcrypt=require('bcrypt')
+const jwt=require("jsonwebtoken")
 const nodemailer=require("nodemailer")
 let OTP=null
 let obj=null
+const currStatus=async(req,res)=>{
+    if(req.session.username){
+        return res.status(200).json({msg:"loggedin"})
+    }
+    else{
+        return res.status(401).json({msg:"unauthorized"})
+    }
+}
+const userLogOut=async(req,res)=>{
+    console.log("working")
+    if(req.session.username){
+        req.session.username=null
+        return res.status(200).json({msg:"user Logged out"})
+    }
+    else{
+        return res.status(401).json({msg:"something wrong happend"})
+    }
+}
 const userSignUp=async(req,res)=>{
     try{
         
@@ -128,6 +147,8 @@ const userSignIn=async(req,res)=>{
         console.log(req.body.password)
         if(resp.length===1){
             if(await bcrypt.compare(req.body.password,resp[0].password)){
+                
+                req.session.username=req.body.email
                 return res.status(200).json({msg:"logged in"})
             }
             else{
@@ -141,4 +162,4 @@ const userSignIn=async(req,res)=>{
         console.log(error)
     }
 }
-module.exports={userSignUp,userOTP,userSignIn}
+module.exports={userSignUp,userOTP,userSignIn,currStatus,userLogOut}

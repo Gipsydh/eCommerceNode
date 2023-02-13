@@ -1,5 +1,24 @@
 const shopDDlist=document.querySelector(".ddShop .ddShopInfo")
 const shopDDlistMob=document.querySelector(".navbar .checking .ddShopInfo")
+const accountsBtn=document.querySelector(".container .navbar .topBar .accounts")
+console.log(accountsBtn)
+// const checkStatus=async()=>{
+//     const resp=await axios.get('/api/v1/currStatus')
+//     console.log(resp.body)
+// }
+accountsBtn.addEventListener('click',async(e)=>{
+    console.log("yes")
+    await axios.get('/api/v1/currStatus').then((response)=>{
+       if(response.status===200){
+        window.location.href="../userProfile/userProfile.html"
+       }
+    }).catch((err)=>{
+        if(err.response.status===401){
+            window.location.href="../login/index.html"
+        }
+    })
+    
+})
 
 const navbarShow=async()=>{
     try {
