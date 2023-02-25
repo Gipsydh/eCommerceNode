@@ -73,6 +73,7 @@
     background-color:var(--buttonHover);
     color: white;
 }
+
 .container .navbar .bottomBar .bottomNavbar .option:hover i{
     transform: rotate(-90deg);
 }

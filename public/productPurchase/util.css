@@ -1,0 +1,19 @@
+.btn-b{
+    display: inline-block;
+    padding:12px 24px ;
+    transition: 0.3s ease-in-out;
+    margin-top: 10px;
+    background-color: var(--buttonBlackBackground);
+    margin-bottom: 20px;
+}
+.btn-b span{
+    color:white
+
+
+}
+.btn-b:hover{
+    background-color: var(--buttonHover);
+}
+.lockedOptn1,.lockedOptn2,.lockedOptn3{
+    opacity: 0.4;
+}

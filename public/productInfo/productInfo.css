@@ -37,6 +37,10 @@ p{
 }
 
 /* ---------------------------------------- */
+.container{
+    opacity: 0;
+    transition: 0.3s ease-in-out;
+}
 .container .productArea{
     width: 1260px;
 }

@@ -1,4 +1,4 @@
-userLoginVerify=(req,res,next)=>{
+const userLoginVerify=async(req,res,next)=>{
     if(req.session.username){
         next()
     }
@@ -6,4 +6,4 @@ userLoginVerify=(req,res,next)=>{
         return res.status(401).json({msg:"unauthrized"})
     }
 }
-module.exports=userLoginVerify
+module.exports={userLoginVerify}

@@ -1,6 +1,10 @@
 const shopDDlist=document.querySelector(".ddShop .ddShopInfo")
 const shopDDlistMob=document.querySelector(".navbar .checking .ddShopInfo")
 const accountsBtn=document.querySelector(".container .navbar .topBar .accounts")
+function goToHome(){
+    console.log("working")
+    window.location.href="/"
+}
 console.log(accountsBtn)
 // const checkStatus=async()=>{
 //     const resp=await axios.get('/api/v1/currStatus')

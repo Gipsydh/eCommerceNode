@@ -149,6 +149,8 @@ const userSignIn=async(req,res)=>{
             if(await bcrypt.compare(req.body.password,resp[0].password)){
                 
                 req.session.username=req.body.email
+                req.session.first_name=resp[0].first_name
+                req.session.last_name=resp[0].last_name
                 return res.status(200).json({msg:"logged in"})
             }
             else{

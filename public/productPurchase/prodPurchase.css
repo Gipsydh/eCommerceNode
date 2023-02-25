@@ -1,0 +1,172 @@
+.productArea span{
+    letter-spacing: 1px;
+    font-size: 14px;
+    font-weight: 400;
+    color:var(--topBar);
+    line-height: 1.6;
+}
+h2{
+    color: #333333;
+    letter-spacing: 1px;
+    font-size: 23px;
+    font-family: roboto;
+    font-weight: 400;
+    margin: 20px 0 10px 0;
+}
+.productArea{
+    margin-bottom: 30px;
+}
+.productArea .tag{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    background-color: #f5f5f5;
+    margin-bottom: 10px;
+}
+.productArea .tag i{
+    font-size: 14px;
+}
+.productArea .tag span{
+    font-size: 16px;
+    font-weight: 500;
+    color: var(--buttonBlackBackground);
+    
+    
+    
+}
+/* .productArea {
+    transition: 0.3s ease-in-out;
+} */
+.productArea .tagDetails{
+    transition: height 0.3s ease-in-out;
+    overflow: hidden;
+    padding: 0 15px;
+    
+}
+.heightAnime{
+    height: 0px;
+    overflow: hidden;
+    transition: 0.3s all ease-in-out;
+}
+.productArea .uncheckedLogin, .productArea .checkedLogin{
+    transition: 0.3s ease-in-out;
+}
+.productArea .tagDetails span{
+    display: flex;
+    flex-direction: column;
+    font-size: 13px;
+}
+.productArea .tagDetails label{
+    display: flex;
+    margin-bottom: 10px;
+    align-items: center;
+}
+.productArea .checkoutDetails input{
+    margin-right: 5px;
+}
+.productArea .billingDetails .box{
+    display: flex;
+}
+.productArea .billingDetails .box .left,.productArea .billingDetails .box .right{
+    width: 50%;
+    padding: 0 15px;
+}
+.productArea .billingDetails .box input,.productArea .billingDetails .box select,.productArea .paymentDetails textarea{
+    width: 100%;
+    padding: 12px;
+    border: 1px solid var(--borderColor);
+    transition: 0.2s ease-in-out;
+    font-family: roboto;
+    margin-bottom: 5px;
+    transition: 0.3s ease-in-out;
+}
+.productArea .billingDetails .box label{
+    margin: 7px 0 10px 0;
+    font-family: roboto;
+    font-weight: 400;
+    font-size: 13px;
+    letter-spacing: 1px;
+    color: var(--topBar);
+}
+.productArea .billingDetails .box input:focus,.productArea .paymentDetails textarea:focus{
+    outline: none;
+    border: 1px solid var(--text-secondary);
+}
+.productArea .paymentDetails .btn{
+    float: right;
+}
+.productArea .billingDetails .box h2{
+    margin-bottom: 20px;
+    padding: 7px 0;
+    border-bottom: 1px solid var(--borderColor);
+}
+.productArea .billingDetails .btn{
+    float: right;
+    margin-right: 15px;
+}
+.productArea .confirmDetails table{
+    width: 100%;
+    font-family: roboto;
+}
+.productArea .confirmDetails .btn{
+    float: right;
+}
+.productArea .confirmDetails table,td,tr,th{
+    border: 1px solid var(--borderColor);
+    border-collapse: collapse;
+    padding: 7px;
+}
+.productArea .confirmDetails th{
+    padding: 8px;
+    font-weight: 500;
+    color: #444444;
+    font-size: 14px;
+}
+.productArea .confirmDetails td{
+    font-size: 15px;
+    color:var(--topBar);
+    text-align: center;
+}
+@media all and (max-width:768px) {
+    .productArea .billingDetails .box{
+        flex-direction: column;
+    }
+    .productArea .billingDetails .box .left,.productArea .billingDetails .box .right{
+        width: 100%;
+        padding: 0;
+    }
+}
+/* .checkedLogin{
+    display: none;
+} */
+.changeAcct{
+    cursor: pointer;
+    /* transition: 0.3s ease-in-out; */
+}
+.changeAcct:hover{
+    color: #222;
+}
+
+.productArea .tagDetails .errorMsg{
+    font-size: 13px;
+    font-weight: 400;
+    color: var(--buttonHover);
+    padding-top: 10px;
+    display: none;
+}
+.success{
+    width: 100%;
+    display: none;
+    height: 600px;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-image: url('../resources/checkout-success.jpg');
+    
+}
+.success .successSpan{
+    display: block;
+    margin-bottom: 15px;
+}

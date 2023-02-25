@@ -27,7 +27,9 @@ document.querySelector('.navbar').outerHTML=`  <div class="navbar">
     </div>
     <div class="bottomNavbar">
         <div class="option btn homeNavbar"  onmouseenter="dropdownOptions()">
-            <span>Home</span>
+       
+        <span>Home</span>
+         
             <i class="fa-solid fa-caret-down"></i>
             <div class="resultDropDown ddHome">
                 <div class="Doption"> 
@@ -80,7 +82,10 @@ document.querySelector('.navbar').outerHTML=`  <div class="navbar">
 <div class="checking mobileMoreOptns">
     <div class="option">
         <div class="optionName">
-            <span>Home</span>
+        
+         <span>Home</span>
+        
+       
         </div>
         <div class="more">
             <i class="fa-solid fa-plus"></i>
