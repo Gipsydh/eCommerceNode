@@ -41,8 +41,8 @@ const sendReq=async(obj)=>{
         await axios.post("/api/v1/signIn",obj).then((response)=>{
             
             document.querySelector(".loggedIn").style.display="block"
-          
-            window.location.href="../userProfile/userProfile.html"
+            history.back()
+            // window.location.href="../userProfile/userProfile.html"
         }).catch((err)=>{
             if(err.response.status===401){
                 document.querySelector(".wrongPass").style.display="block"
