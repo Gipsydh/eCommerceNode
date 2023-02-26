@@ -73,6 +73,8 @@ userCheck.addEventListener("click",function(){
                         tags[3].style.pointerEvents="auto"
                         tags[3].style.opacity="1"
                         tags[3].click()
+                        document.querySelector(".finalCheckBtn").style.pointerEvents="auto"
+                        document.querySelector(".finalCheckBtn").children[0].innerText="Continue"
                         document.querySelector(".finalCheckBtn").addEventListener('click',function(){
                             console.log(userAddress)
                             const productInfo=[]
@@ -80,8 +82,13 @@ userCheck.addEventListener("click",function(){
                                 const tempObj=[prodItemsId[i],prodItemsCount[i]]
                                 productInfo.push(tempObj)
                             }
+                            this.children[0].innerText="Loading..."
                             axios.post("/api/v1/placeOrder",{userAddress,"productInfo":productInfo,"totalPrice":totalPrice,"date":new Date().toLocaleString()}).then((response)=>{
                                 window.location.href="/productPurchase/prodPurchase.html?purchaseStat=true"
+                                this.children[0].innerText="Done"
+                                this.style.pointerEvents="none"
+
+                                
                             })
                         })                  
                     })

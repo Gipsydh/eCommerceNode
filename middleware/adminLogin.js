@@ -1,7 +1,6 @@
 
 const adminLoginVerify=(req,res,next)=>{
-    console.log(req.session.username)
-    if(req.session.username==="admin"){
+    if(req.session.adminUsername==="admin"){
         next()
     }    
     else{
