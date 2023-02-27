@@ -26,12 +26,13 @@ for(let i=1;i<tags.length;i++){
 }
 let totalPrice=0;
 const userCheck=document.querySelector(".userCheck")
-userCheck.addEventListener("click",function(){
+userCheck.addEventListener("click",async(e)=>{
     console.log('check')
-        axios.get("/api/v1/loginInfo").then((response)=>{
+        await axios.get("/api/v1/loginInfo").then((response)=>{
             tags[1].style.pointerEvents="auto"
             tags[1].style.opacity="1"
             tags[1].click()
+            
             document.querySelector('.getUserAddress').addEventListener('click',function(){
                 let userAddress={}
                 let userAddcheckFlag=true

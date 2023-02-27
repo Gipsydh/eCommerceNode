@@ -39,7 +39,7 @@ const updateProduct=async(req,res)=>{
     try {
         const id=req.body.id
         const {editedProduct}=req.body
-        console.log(editedProduct.p_id)
+        console.log(editedProduct)
         const checkProduct=await products.find({p_id:editedProduct.p_id})
         // if(checkProduct.length>=1){
         //     return res.status(200).json({status:false,msg:"this product id is already in use"})

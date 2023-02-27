@@ -13,6 +13,9 @@ const checkoutInfo=async(req,res)=>{
     
 }
 const loginInfo=async(req,res)=>{
+   
+    
+      
     if(req.session.username){
         res.status(200).json({msg:"login credentials permitted"})
     }
@@ -103,8 +106,34 @@ const placeOrder=async(req,res)=>{
         return res.status(400).json({msg:"something wrong happened"})
     })
 }
+const checkQuantity=async(req,res)=>{
+    try {
+        await products.find({_id:req.query.id}).then((response)=>{
+            console.log(response)
+            let OUFlist=[]
+            for(let i=0;i<response.length;i++){
+                if(response[i].p_quantity===0){
+                    let tempOUF={}
+                    tempOUF.p_id=response[i].p_id
+                    tempOUF.p_name=response[i].p_name
+                    tempOUF.id=response[i]._id
+                    OUFlist.push(tempOUF)
+                }
+            }
+            if(OUFlist.length===0){
+                return res.status(200).json({msg:"can be proceed"})
+            }
+            else{
+                return res.status(400).json({msg:"out of stock"})
+            }
+        })
+    } catch (error) {
+        
+    }
+}
 module.exports={
     checkoutInfo,
     loginInfo,
     placeOrder,
+    checkQuantity
 }

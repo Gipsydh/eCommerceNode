@@ -1,7 +1,7 @@
 const params = window.location.search
 const id = new URLSearchParams(params).get('prod_id')
 console.log(id)
-
+let productCounter=0;
 const getOneProduct=async()=>{
     try {
         await axios.get("/api/v1/oneProduct",{
@@ -14,7 +14,8 @@ const getOneProduct=async()=>{
             document.querySelector(".container .productArea .productName h1").innerHTML=response.data.resultProducts[0].p_name
             document.querySelector(".container .productArea .productDetails .heading .p_brand").innerHTML=response.data.resultProducts[0].p_company
             let p_avail="Out of Stock";
-            if(response.data.resultProducts[0].p_outOfStock===false){
+            if(response.data.resultProducts[0].p_quantity!=0){
+                productCounter=response.data.resultProducts[0].p_quantity
                 p_avail="In Stock"
                 const OOF=document.querySelectorAll(".actions .outOfStock")
                 console.log(OOF)
@@ -223,7 +224,9 @@ function productQuantity(el){
     }
     else{
         prodCounter=parseInt(el.previousElementSibling.children[0].innerText)
+        if(prodCounter<productCounter)
         el.previousElementSibling.children[0].innerText=prodCounter+1;
+       
     }
 }
 // const moveLeftNav=document.querySelector(".container .productArea .rel-nav .moveLeft")
@@ -300,7 +303,43 @@ revBtn.addEventListener('click',function(){
     document.documentElement.scrollTop=document.querySelector(".container .productArea .description").offsetTop;
     document.querySelector(".container .productArea .description .header .btnReview").click();
 })
-function checkout(){
+// function checkout(){
     
-    window.location.href=`../productPurchase/prodPurchase.html?prodId=${id}&prodCount=${parseInt(document.querySelector(".counter").innerText)}`
-}
+//     window.location.href=`../productPurchase/prodPurchase.html?prodId=${id}&prodCount=${parseInt(document.querySelector(".counter").innerText)}`
+// }
+document.querySelector(".checkOutBtn").addEventListener('click',async(e)=>{
+    try {
+        
+        await axios.get("/api/v1/checkQuantity",{
+            params:{
+             id:id
+            }}).then((response)=>{
+                if(response.status===200){
+                        window.location.href=`../productPurchase/prodPurchase.html?prodId=${id}&prodCount=${parseInt(document.querySelector(".counter").innerText)}`
+
+                }
+                
+            }).catch((err)=>{
+                if(err.response.status===400){
+                    console.log("display")
+                    document.querySelector(".prodOUF").style.display="block"
+                    document.querySelector(".prodOUF").classList.add("prodOUFup")
+                    for(let i=0;i<document.querySelectorAll(".inStock").length;i++){
+                        document.querySelectorAll(".inStock")[i].style.display="none"
+                    }
+                    for(let i=0;i<document.querySelectorAll(".outOfStock").length;i++){
+                        document.querySelectorAll(".outOfStock")[i].style.display="flex"
+                    }
+                    setTimeout(() => {
+                        document.querySelector(".prodOUF").classList.remove("prodOUFup")
+                       
+                            document.querySelector(".prodOUF").style.display="none"
+                            
+                       
+                    }, 3700);
+                }
+            })
+    } catch (error) {
+        
+    }
+})

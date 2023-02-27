@@ -13,6 +13,20 @@ const currStatus=async(req,res)=>{
         return res.status(401).json({msg:"unauthorized"})
     }
 }
+const getCurrUserInfo=async(req,res)=>{
+    console.log(req.session.username)
+    await users.find({email:req.session.username}).then((response)=>{
+        console.log(response)
+        let temp={}
+        temp.username=response[0].email
+        temp.first_name=response[0].first_name
+        temp.last_name=response[0].last_name
+        temp.telephone=response[0].telephone
+        return res.status(200).json(temp)
+    }).catch((err)=>{
+        return res.status(401).json({msg:"something went wrong"})
+    })
+}
 const userLogOut=async(req,res)=>{
     console.log("working")
     if(req.session.username){
@@ -164,4 +178,19 @@ const userSignIn=async(req,res)=>{
         console.log(error)
     }
 }
-module.exports={userSignUp,userOTP,userSignIn,currStatus,userLogOut}
+const updateUserInfo=async(req,res)=>{
+    const temp1={}
+    temp1.first_name=req.body.newInfo.first_name
+    temp1.last_name=req.body.newInfo.last_name
+    temp1.telephone=req.body.newInfo.telephone
+    console.log(temp1)
+    console.log(req.session.username)
+    await users.findOneAndUpdate({email:req.session.username},temp1).then((response)=>{
+        console.log(response)
+        return res.status(200).send({msg:"user profile updated"})
+
+    }).catch((err)=>{
+        return res.status(400).send({msg:"something wrong happened"})
+    })
+}
+module.exports={userSignUp,userOTP,userSignIn,currStatus,userLogOut,updateUserInfo,getCurrUserInfo}

@@ -17,3 +17,15 @@
 .lockedOptn1,.lockedOptn2,.lockedOptn3{
     opacity: 0.4;
 }
+.productArea input{
+    padding: 12px;
+    border: 1px solid var(--borderColor);
+transition: 0.2s ease-in-out;
+font-family: roboto;
+    margin-bottom: 5px;
+
+}
+ .productArea input:focus{
+    outline: none;
+    border: 1px solid var(--text-secondary);
+}

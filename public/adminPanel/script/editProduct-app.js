@@ -22,8 +22,8 @@ submitForm.addEventListener("click",(e)=>{
     editedProduct.p_trending=document.querySelector(".p_trending").checked
     editedProduct.p_new=document.querySelector(".p_new").checked
     editedProduct.p_outOfStock=document.querySelector(".p_outOfStock").checked
+    editedProduct.p_quantity=document.querySelector(".p_input_quantity").value
     
-    console.log(editedProduct)
     postEditedProduct(editedProduct)
 
 })
@@ -31,21 +31,29 @@ const postEditedProduct=async(editedProduct)=>{
     let confirmS=false;
     confirmS=confirm("are you sure?")
     if(confirmS){
-
+        
         try {
             
-           
+            
             await axios.patch("/adminPanel/api/v1/adminEditProduct",
             {id:id,editedProduct:editedProduct}
             
-                
+            
             ).then((response)=>{
+                
                 console.log(response.data.status)
                 if(response.data.status===true){
                     document.querySelector(".screen").style.opacity='1'
+                    document.querySelector(".screen").style.display='flex'
+
 
                     setTimeout(() => {
                         document.querySelector(".screen").style.opacity='0'
+                        
+                        setTimeout(() => {
+                            document.querySelector(".screen").style.display='none'
+                            
+                        }, 300);
                     }, 1000);
                 }
             })
@@ -72,7 +80,7 @@ const getOneProduct=async()=>{
             document.querySelector(".p_input_name").value=singleProduct.p_name
             document.querySelector(".p_input_price").value=singleProduct.p_price
             document.querySelector(".p_input_discPrice").value=singleProduct.p_discPrice
-
+            document.querySelector(".p_input_quantity").value=singleProduct.p_quantity
             let innerDomCompany=null;
             let innerDomType=null;
             for(let i=0;i<companiesDb.length;i++){
@@ -97,7 +105,15 @@ const getOneProduct=async()=>{
             document.querySelector(".p_rating").value=singleProduct.p_rating
             document.querySelector(".p_trending").checked=singleProduct.p_trending
             document.querySelector(".p_new").checked=singleProduct.p_new
-            document.querySelector(".p_outOfStock").checked=singleProduct.p_outOfStock
+            console.log(typeof(singleProduct.p_quantity))
+            if(singleProduct.p_quantity===0){
+
+                document.querySelector(".p_outOfStock").checked=true
+            }
+            else{
+                document.querySelector(".p_outOfStock").checked=false
+
+            }
         })
     } catch (error) {
         fetch('/adminPanel/api/v1/adminProducts').then((response)=>{

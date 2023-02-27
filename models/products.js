@@ -49,6 +49,11 @@ const productSchema=new mongoose.Schema({
     p_new:{
         type:Boolean,
         default:false,
+    },
+    p_quantity:{
+        type:Number,
+        required:[true,"product quantity cannot be empty"],
+        default:0
     }
 
     
