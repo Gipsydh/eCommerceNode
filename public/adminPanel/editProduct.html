@@ -86,14 +86,14 @@
             <div class="heading">
                 <span>Add image</span>
             </div>
-            <form action="/adminPanel/api/v1/adminEditProductImg" method="post" enctype="multipart/form-data">
+            <form id="form_el" enctype="multipart/form-data">
+                
                 <div class="inputBox">
                     <label for="p_photo_current" class="p_photo_current">Current image</label>
-                    <img src="" alt="">
                 </div>
                 <div class="inputBox">
                     <label for="p_photo"></label>
-                    <input type="file" name="image" id="image">
+                    <input type="file" name="image" accept="image/*" id="image" multiple>
                 </div>
                 <input type="submit" class="submitFormImg">
 

@@ -80,3 +80,12 @@ const navbarShow=async()=>{
     }
 }
 navbarShow()
+const headerPoster=document.querySelector(".headerPoster")
+window.addEventListener('scroll',function(e){
+    // console.log(window.scrollY);
+    // console.log(document.body.offsetHeight)
+    
+    let position=(window.scrollY/5000*100)*8
+    console.log(position)
+    headerPoster.style.backgroundPosition=`0% ${(50-position)}%`
+})

@@ -20,7 +20,7 @@ const navbarShowHome=async()=>{
                         <div class="states sale"><span>SALE</span></div>
                         <div class="states outOfStock blackBG ${productOutput[i].p_outOfStock}"><span>OUT STOCK</span></div>
                     </div>
-                    <img src="../resources/${productOutput[i].p_id}.jpg" alt="">
+                    <img src="../resources/${productOutput[i].p_id}.0.jpg" alt="" style="width:100%">
                     <div class="productImgWrapper">
                         <div class="shortView productHoverView">
                             <i class="fa-solid fa-eye"></i>

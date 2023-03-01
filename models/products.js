@@ -54,7 +54,8 @@ const productSchema=new mongoose.Schema({
         type:Number,
         required:[true,"product quantity cannot be empty"],
         default:0
-    }
+    },
+   
 
     
 

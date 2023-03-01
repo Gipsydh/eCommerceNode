@@ -10,5 +10,5 @@ router.route('/adminProducts').get(adminLoginVerify,getAllProducts)
 router.route('/adminProducts').post(adminLoginVerify,searchProducts)
 router.route("/adminEditProduct").post(adminLoginVerify,editProduct);
 router.route("/adminEditProduct").patch(adminLoginVerify,updateProduct)
-router.route("/adminEditProductImg").post(upload.single('image'),updateImg)
+router.route("/adminEditProductImg").patch(upload.array('image'),updateImg)
 module.exports=router 

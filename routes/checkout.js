@@ -5,7 +5,7 @@ const router=express.Router();
 router.route('/checkoutInfo').get(userLoginVerify,checkoutInfo)
 router.route('/loginInfo').get(userLoginVerify,loginInfo)
 router.route('/placeOrder').post(userLoginVerify,placeOrder)
-router.route("/checkQuantity").get(userLoginVerify,checkQuantity)
+router.route("/checkQuantity").get(checkQuantity)
 
 
 module.exports=router

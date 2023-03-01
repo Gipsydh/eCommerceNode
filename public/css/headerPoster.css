@@ -1,6 +1,6 @@
 .container .headerPoster{
     width: 100%;
-    background-image: url("../resources/banner1-1.jpg");
+    background-image: url("../resources/headerPoster.jpg");
     display: flex;
     justify-content: center;
     align-items: center;
@@ -8,7 +8,7 @@
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
-    transition: 0.1s ease-in-out;
+    /* transition: 0.1s ease-in-out; */
     margin-bottom: 50px;
 }
 .container .headerPoster .posterContainer{

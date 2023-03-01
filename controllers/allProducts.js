@@ -52,6 +52,7 @@ const updateProduct=async(req,res)=>{
 }
 const updateImg=async(req,res)=>{
     try {
+        // console.log(req.data)
         res.status(200).json({msg:"positive"})
     } catch (error) {
         console.log(error)

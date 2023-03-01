@@ -1,13 +1,31 @@
 
 const p_outOfStock=document.querySelector(".p_outOfStock")
 const submitForm=document.querySelector(".submitForm")
-const submitFormImg=document.querySelector(".submitForm")
+const submitFormImg=document.querySelector(".submitFormImg")
 const params = window.location.search
 const id = new URLSearchParams(params).get('id')
 
-submitFormImg.addEventListener('click',(e)=>{
-    e.preventDefault();
-
+submitFormImg.addEventListener('click',async (e)=>{
+    console.log(document.querySelector(".p_input_id").value)
+    e.preventDefault()
+   const files = document.querySelector("#image").files;
+   const data=new FormData()
+   if (files.length != 0) {
+    for (const single_file of files) {
+        data.append('image', single_file)
+    }
+}
+axios({
+    method: "PATCH",
+    url:" /adminPanel/api/v1/adminEditProductImg",
+    arrayKey: '',
+    data:data,
+    params:document.querySelector(".p_input_id").value,
+    query:document.querySelector(".p_input_id").value,
+    headers: {
+      "Content-Type": "multipart/form-data"
+    }
+  })
 })
 submitForm.addEventListener("click",(e)=>{
     e.preventDefault()
@@ -75,12 +93,18 @@ const getOneProduct=async()=>{
             companiesDb=response.data.companiesDB
             typesDb=response.data.typesDB
             console.log(singleProduct.p_outOfStock)
-            document.querySelector(".p_photo_current").nextElementSibling.outerHTML=`<img src="../resources/${singleProduct.p_id}.jpg" style="height:100%;width:100%">`
             document.querySelector(".p_input_id").value=singleProduct.p_id
             document.querySelector(".p_input_name").value=singleProduct.p_name
             document.querySelector(".p_input_price").value=singleProduct.p_price
             document.querySelector(".p_input_discPrice").value=singleProduct.p_discPrice
             document.querySelector(".p_input_quantity").value=singleProduct.p_quantity
+            let addImg=document.querySelector(".p_photo_current")
+            let addedImg=""
+            for(let i=0;i<5;i++){
+                addedImg+=`<img src="../resources/${document.querySelector(".p_input_id").value}.${i}.jpg" style="height:100%;width:100%"></img>`
+
+            }
+            addImg.insertAdjacentHTML('afterEnd',addedImg)
             let innerDomCompany=null;
             let innerDomType=null;
             for(let i=0;i<companiesDb.length;i++){
