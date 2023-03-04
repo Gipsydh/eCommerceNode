@@ -1,5 +1,6 @@
 const products=require("../models/products")
 const orders=require("../models/orders")
+const users=require("../models/users")
 const nodemailer=require('nodemailer')
 const checkoutInfo=async(req,res)=>{
     try {
@@ -17,10 +18,15 @@ const loginInfo=async(req,res)=>{
     
       
     if(req.session.username){
-        res.status(200).json({msg:"login credentials permitted"})
+        await users.find({email:req.session.username}).then((response)=>{
+            console.log(response)
+            res.status(200).json({msg:response[0]})
+        }).catch((err)=>{
+            res.status(401).json({msg:"something wrong"})
+        })
     }
     else{
-        req.status(401).json({msg:"unauthorized"})
+        res.status(401).json({msg:"unauthorized"})
     }
 }
 const placeOrder=async(req,res)=>{
@@ -33,6 +39,7 @@ const placeOrder=async(req,res)=>{
             tempObjProd.p_name=response[0].p_name
             tempObjProd.p_id=response[0].p_id
             tempObjProd.p_price=response[0].p_price
+            tempObjProd.p_discPrice=response[0].p_discPrice
             allProductInfo.push(tempObjProd)
         })
     }   
@@ -56,13 +63,14 @@ const placeOrder=async(req,res)=>{
         })
         let senderInfoInner=""
         let totalMailPrice=0
+        console.log(allProductInfo[0])
         for(let i=0;i<allProductInfo.length;i++){
             senderInfoInner+=`<td>${allProductInfo[i].p_name}</td>
             <td>${allProductInfo[i].p_id}</td>
             <td>${req.body.productInfo[i][1]}</td>
-            <td>${allProductInfo[i].p_price}$</td>
-            <td>${allProductInfo[i].p_price*parseInt(req.body.productInfo[i][1])}$</td>`
-            totalMailPrice+=allProductInfo[i].p_price*parseInt(req.body.productInfo[i][1])
+            <td>${allProductInfo[i].p_price-(allProductInfo[i].p_price-allProductInfo[i].p_discPrice)}$</td>
+            <td>${(allProductInfo[i].p_price-(allProductInfo[i].p_price-allProductInfo[i].p_discPrice))*parseInt(req.body.productInfo[i][1])}$</td>`
+            totalMailPrice+=(allProductInfo[i].p_price-(allProductInfo[i].p_price-allProductInfo[i].p_discPrice))*parseInt(req.body.productInfo[i][1])
         }
         let sendInfoOuter=`
         <span style="margin:10px 0;display:block;">Please check your order details for confirmation</span>

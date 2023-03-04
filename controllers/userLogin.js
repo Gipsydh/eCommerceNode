@@ -193,4 +193,33 @@ const updateUserInfo=async(req,res)=>{
         return res.status(400).send({msg:"something wrong happened"})
     })
 }
-module.exports={userSignUp,userOTP,userSignIn,currStatus,userLogOut,updateUserInfo,getCurrUserInfo}
+const updateUserPassword=async(req,res)=>{
+    if(req.body.prevPass===""||req.body.newPass===""||req.body.confirmPass===""){
+        return res.status(400).json({msg:"some of the fields are empty"})
+    }
+    await users.find({email:req.session.username}).then(async(response)=>{
+        if(await bcrypt.compare(req.body.prevPass,response[0].password)){
+            if(req.body.newPass!=req.body.confirmPass){
+                return res.status(400).json({msg:"new password and confirm password is not same"})
+            }
+            else{
+                const salt=await bcrypt.genSalt(10)
+                const hashedP=await bcrypt.hash(req.body.newPass,salt)
+                let newPassword={
+                    password:hashedP
+                }
+                await users.findOneAndUpdate({email:req.session.username},newPassword).then((response)=>{
+                    return res.status(200).json({msg:"password changed successfully"})
+                }).catch((err)=>{
+                    return res.status(400).json({msg:"something went wrong"})
+                })
+            }
+        }
+        else{
+            return res.status(400).json({msg:"Please enter correct password to verify"})
+        }
+    })
+   
+  
+}
+module.exports={userSignUp,userOTP,userSignIn,currStatus,userLogOut,updateUserInfo,getCurrUserInfo,updateUserPassword}

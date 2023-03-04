@@ -32,7 +32,10 @@ userCheck.addEventListener("click",async(e)=>{
             tags[1].style.pointerEvents="auto"
             tags[1].style.opacity="1"
             tags[1].click()
-            
+            console.log(response)
+            document.querySelector("#firstName").value=response.data.msg.first_name
+            document.querySelector("#lastName").value=response.data.msg.last_name
+            document.querySelector("#email").value=response.data.msg.email
             document.querySelector('.getUserAddress').addEventListener('click',function(){
                 let userAddress={}
                 let userAddcheckFlag=true
@@ -157,10 +160,10 @@ axios.get("/api/v1/checkoutInfo",{params:{ids:prodItemsId}}).then((response)=>{
         <td>${response.data.resp[i].p_name}</td>
         <td>${response.data.resp[i].p_company}</td>
         <td>${prodItemsCount[i]}</td>
-        <td>${response.data.resp[i].p_price}$</td>
-        <td style="text-align:right">${response.data.resp[i].p_price*prodItemsCount[i]}$</td>
+        <td>${response.data.resp[i].p_price-(response.data.resp[i].p_price-response.data.resp[i].p_discPrice)}$</td>
+        <td style="text-align:right">${(response.data.resp[i].p_price-(response.data.resp[i].p_price-response.data.resp[i].p_discPrice))*prodItemsCount[i]}$</td>
     </tr>`
-    totalPrice+=response.data.resp[i].p_price*prodItemsCount[i]
+    totalPrice+=(response.data.resp[i].p_price-(response.data.resp[i].p_price-response.data.resp[i].p_discPrice))*prodItemsCount[i]
     }
     appendList+=`<tr><td colspan=4>Total</td><td>${totalPrice}$</td></tr> `
     productList.insertAdjacentHTML('afterend',appendList)
