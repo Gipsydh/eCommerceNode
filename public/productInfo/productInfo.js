@@ -113,7 +113,7 @@ const getOneProduct = async () => {
                 for (let i = 0; i < response.data.length; i++) {
                     relatedProductList.innerHTML += ` <a class="productCard" href="/productInfo/productInfo.html?prod_id=${response.data[i]._id}">
                     <div class="productImg">
-                        <img src="../resources/related-1.jpg" alt="">
+                        <img src="../resources/${response.data[i].p_id}.0.jpg" alt="">
                     </div>
                     <div class="productName">
                         <span>${response.data[i].p_name}</span>

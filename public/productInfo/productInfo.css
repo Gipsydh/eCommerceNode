@@ -632,7 +632,7 @@ font-family: roboto;
         padding:0 10px;
     }
     .container .headerPoster .posterContainer .productName span{
-        font-size:14px;
+        font-size:10px;
     }
     .container .headerPoster .posterContainer .productName {
         
@@ -702,6 +702,9 @@ font-family: roboto;
     }
     .container .productArea .review .rating .slider{
         width: 100%;
+    }
+    .container .headerPoster .posterContainer .productPath span{
+        font-size: 10px;
     }
 }
 .required, .container .productArea .review .reviewTemplate .reviewForm .ratingBox .required{

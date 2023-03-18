@@ -558,6 +558,7 @@ border-radius: 50%;
     }
 }
 @media all and (max-width:760px) {
+    
     .searchScreen .searchBox .outputBar a{
         width: calc(100% / 3);
         min-height: calc(80vh / 3);

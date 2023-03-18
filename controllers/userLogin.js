@@ -158,8 +158,7 @@ const userSignIn=async(req,res)=>{
     try {
         
         const resp=await users.find({email:req.body.email})
-        console.log(resp[0].password)
-        console.log(req.body.password)
+        
         if(resp.length===1){
             if(await bcrypt.compare(req.body.password,resp[0].password)){
                 

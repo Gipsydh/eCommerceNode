@@ -203,7 +203,10 @@ const cartDetails = async () => {
 }
 
 cartDetails()
-cartBG.style.height = `${document.body.offsetHeight}px`
+setTimeout(() => {
+  
+    cartBG.style.height = `${document.querySelector("body").clientHeight}px`
+}, 1000);
 cartBtn.addEventListener("click", (e) => {
     if (window.getComputedStyle(cartDD).getPropertyValue("height") === "0px") {
         cartDetails().then((response) => {

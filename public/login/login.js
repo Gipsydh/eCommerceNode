@@ -44,7 +44,7 @@ const sendReq=async(obj)=>{
             const lastPageUrl = document.referrer;
             window.location.href=lastPageUrl
         }).catch((err)=>{
-            if(err.response.status===401){
+            if(err.response.status===401 || err.response.status===404){
                 document.querySelector(".wrongPass").style.display="block"
             }
         })
