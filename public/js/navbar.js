@@ -42,3 +42,26 @@ document.querySelectorAll(".navbar .checking .option .more").addEventListener('c
     }
 })
 
+const searchScreen=document.querySelector(".searchScreen");
+const searchBtn=document.querySelector(".container .navbar .bottomBar .sideNavs .search")
+const searchBox=document.querySelector(".searchScreen .searchBox")
+searchBtn.addEventListener("click",async(e)=>{
+    searchScreen.classList.remove("searchScreenOff")
+    // searchBox.classList.remove("searchTopDownRev")
+    searchBox.style.animation="searchTopDown 0.3s 1"
+    searchScreen.style.display="block"
+    document.body.style.overflow = "hidden";
+
+})
+const closeSearchBar=document.querySelector(".searchScreen .searchBox .closeBtn i")
+closeSearchBar.addEventListener("click",async(e)=>{
+    searchScreen.classList.add("searchScreenOff")
+    searchBox.style.animation="searchTopDownRev 0.3s 1"
+    document.body.style.overflow = "scroll";
+
+    // searchBox.classList.add("searchTopDownRev")
+    setTimeout(() => {
+        
+        searchScreen.style.display='none'
+    }, 300);
+})

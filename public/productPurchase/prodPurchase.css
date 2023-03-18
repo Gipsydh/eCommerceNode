@@ -5,6 +5,12 @@
     color:var(--topBar);
     line-height: 1.6;
 }
+.navbar .checking{
+    top: 109px;
+}
+.ddShop{
+    top:149px;
+}
 h2{
     color: #333333;
     letter-spacing: 1px;
@@ -113,7 +119,7 @@ h2{
 .productArea .confirmDetails .btn{
     float: right;
 }
-.productArea .confirmDetails table,td,tr,th{
+.productArea .confirmDetails .billDetailsTable,.productArea .confirmDetails .billDetailsTable td, .productArea .confirmDetails .billDetailsTable tr, .productArea .confirmDetails .billdetailsTable th{
     border: 1px solid var(--borderColor);
     border-collapse: collapse;
     padding: 7px;

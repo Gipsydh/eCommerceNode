@@ -98,6 +98,7 @@ const getOneProduct = async () => {
 
             }
             document.querySelector(".container .headerPoster .posterContainer .productName span").innerHTML = `${response.data.resultProducts[0].p_name.toUpperCase()}`
+            document.querySelector("title").innerText=`${response.data.resultProducts[0].p_name.toUpperCase()}-Information`
             document.querySelector(".container .headerPoster .posterContainer .productPath span").innerHTML = `${response.data.resultProducts[0].p_name}`
             document.querySelector(".container .productArea .price .discPrice").innerText = `$${response.data.resultProducts[0].p_price}`
             document.querySelector(".container .productArea .price .discPrice").style.display = p_discPrice
@@ -390,6 +391,39 @@ document.querySelector(".checkOutBtn").addEventListener('click', async (e) => {
     } catch (error) {
 
     }
+})
+const addToCartBtn=document.querySelector(".container .productArea .actions .buyingOptn .addToCart")
+addToCartBtn.addEventListener("click",async(e)=>{
+    let obj={}
+    obj.p_id=document.querySelector(".productCode").innerText
+    obj.p_name=document.querySelector(".productName").innerText
+    obj.p_obj_id=id
+    obj.p_count=document.querySelector(".counter").innerText
+    await axios.post("/api/v1/addToCart",obj).then((response)=>{
+        const busket=document.querySelector(".container .productArea .actions .buyingOptn .addToCart i")
+        const letter=document.querySelector(".container .productArea .actions .buyingOptn .addToCart span")
+        
+        busket.style.animation="bucketSwipe 1s 1"
+        letter.style.animation="bucketLetter 1s 1"
+        setTimeout(function(){
+            busket.style.animation="none"
+            letter.style.animation="none"
+            // letter.style.animation="bucketLetter2 0.5s 1"
+            busket.style.animation="bucketSwipe2 1s 1"
+            letter.innerText="Added"
+            console.log("time out")
+        }, 1000);
+        setTimeout(function() {
+            busket.style.animation="none"
+            letter.style.animation="none"
+            letter.style.animation="bucketLetter2 0.5s 1"
+            busket.style.animation="bucketSwipe2 1s 1"
+            letter.innerText="Add more"
+        }, 1000);
+        cartDetails()
+    }).catch((err)=>{
+        window.location.href="../login/index.html"
+    })
 })
 
 

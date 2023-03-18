@@ -13,6 +13,20 @@ const ordersSchema=new mongoose.Schema({
         type:Array,
         required:[true,"product info cannot be empty"]
     },
+    status:{
+        type:String,
+        default:"Pending"
+    },
+    date:{
+        type:Date,
+        default:Date.now
+
+    },
+    totalPrice:{
+        type:Number,
+        required:[true,"totalPrice cannot be empty"]
+    }
+
     
     
 

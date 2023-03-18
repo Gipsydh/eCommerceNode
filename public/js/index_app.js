@@ -8,8 +8,12 @@ const navbarShowHome=async()=>{
         for(let i=0;i<productOutput.length;i++){
             if(productOutput[i].p_trending){
                 let flag=false;
+                let outOfStockCheck="false"
                 if(productOutput[i].p_discPrice>0){
                     flag=true;
+                }
+                if(productOutput[i].p_quantity===0){
+                    outOfStockCheck=true
                 }
                 trending1.innerHTML+=`
                 <a class="card" href="./productInfo/productInfo.html?prod_id=${productOutput[i]._id}">
@@ -18,7 +22,7 @@ const navbarShowHome=async()=>{
                         <div class="states discount ${flag}"><span>${Math.floor(100-(productOutput[i].p_discPrice/productOutput[i].p_price)*100)}%</span></div>
                         <div class="states newArrival blackBG ${productOutput[i].p_new}"><span>NEW</span></div>
                         <div class="states sale"><span>SALE</span></div>
-                        <div class="states outOfStock blackBG ${productOutput[i].p_outOfStock}"><span>OUT STOCK</span></div>
+                        <div class="states outOfStock blackBG ${outOfStockCheck}"><span>OUT STOCK</span></div>
                     </div>
                     <img src="../resources/${productOutput[i].p_id}.0.jpg" alt="" style="width:100%">
                     <div class="productImgWrapper">

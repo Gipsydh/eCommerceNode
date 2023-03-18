@@ -1,5 +1,6 @@
 const users=require("../models/users")
 const usersotps=require("../models/usersotp")
+const orders=require("../models/orders")
 const bcrypt=require('bcrypt')
 const jwt=require("jsonwebtoken")
 const nodemailer=require("nodemailer")
@@ -222,4 +223,19 @@ const updateUserPassword=async(req,res)=>{
    
   
 }
-module.exports={userSignUp,userOTP,userSignIn,currStatus,userLogOut,updateUserInfo,getCurrUserInfo,updateUserPassword}
+const getUserOrder=async(req,res)=>{
+    if(req.session.username){
+
+        console.log(req.session.username)
+        // orders.deleteMany().then((response)=>{
+        //     console.log("deleted")
+        // })
+        await orders.find({username:req.session.username}).then((response)=>{
+            return res.status(200).json({response})
+        })
+    }
+    else{
+        return res.status(401).json({msg:"unauthorized"})
+    }
+}
+module.exports={userSignUp,userOTP,userSignIn,currStatus,userLogOut,updateUserInfo,getCurrUserInfo,updateUserPassword,getUserOrder}

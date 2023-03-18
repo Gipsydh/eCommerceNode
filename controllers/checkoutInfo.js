@@ -1,6 +1,7 @@
 const products=require("../models/products")
 const orders=require("../models/orders")
 const users=require("../models/users")
+const carts=require("../models/carts")
 const nodemailer=require('nodemailer')
 const checkoutInfo=async(req,res)=>{
     try {
@@ -47,8 +48,14 @@ const placeOrder=async(req,res)=>{
         username:req.session.username,
         userAddress:req.body.userAddress,
 
-        productInfo:req.body.productInfo
+        productInfo:req.body.productInfo,
+        totalPrice:parseInt(req.body.totalPrice)
     }).then((response)=>{
+         carts.deleteMany({username:req.session.username}).then((response)=>{
+            console.log("successfully deleted")
+         }).catch((err)=>{
+            console.log(err)
+         })
         console.log(req.body.productInfo)
         
         let transporter=nodemailer.createTransport({
@@ -63,14 +70,19 @@ const placeOrder=async(req,res)=>{
         })
         let senderInfoInner=""
         let totalMailPrice=0
-        console.log(allProductInfo[0])
         for(let i=0;i<allProductInfo.length;i++){
+            if(allProductInfo[i].p_discPrice>0){
+                discountPrice=allProductInfo[i].p_discPrice
+            }
+            else{
+                discountPrice=allProductInfo[i].p_price
+            }
             senderInfoInner+=`<td>${allProductInfo[i].p_name}</td>
             <td>${allProductInfo[i].p_id}</td>
             <td>${req.body.productInfo[i][1]}</td>
-            <td>${allProductInfo[i].p_price-(allProductInfo[i].p_price-allProductInfo[i].p_discPrice)}$</td>
-            <td>${(allProductInfo[i].p_price-(allProductInfo[i].p_price-allProductInfo[i].p_discPrice))*parseInt(req.body.productInfo[i][1])}$</td>`
-            totalMailPrice+=(allProductInfo[i].p_price-(allProductInfo[i].p_price-allProductInfo[i].p_discPrice))*parseInt(req.body.productInfo[i][1])
+            <td>${discountPrice}$</td>
+            <td>${discountPrice*parseInt(req.body.productInfo[i][1])}$</td>`
+            totalMailPrice+=(discountPrice*parseInt(req.body.productInfo[i][1]))
         }
         let sendInfoOuter=`
         <span style="margin:10px 0;display:block;">Please check your order details for confirmation</span>
@@ -111,7 +123,7 @@ const placeOrder=async(req,res)=>{
         })
 
     }).catch((error)=>{
-        return res.status(400).json({msg:"something wrong happened"})
+        return res.status(400).json({msg:"something wrong happened"+error})
     })
 }
 const checkQuantity=async(req,res)=>{

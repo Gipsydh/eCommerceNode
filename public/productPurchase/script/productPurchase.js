@@ -3,7 +3,6 @@ const purchaseStat=new URLSearchParams(params).get("purchaseStat")
 if(purchaseStat==="true"){
     let productArea=document.querySelector(".productArea")
                                 for(let i=0;i<productArea.children.length;i++){
-                                    console.log(productArea.children[i])
                                     if(productArea.children[i].classList.contains('success')){
                                         productArea.children[i].style.display="block"
                                     }
@@ -21,18 +20,19 @@ const prodItemsId=prodId.split(",")
 const prodItemsCount=prodCount.split(",")
 const productList=document.querySelector(".tagDetails .header")
 const tags=document.querySelectorAll(".tag")
+for(let i=0;i<prodItemsId.length;i++){
+    console.log(prodItemsId[i])
+}
 for(let i=1;i<tags.length;i++){
     tags[i].style.pointerEvents="none"
 }
 let totalPrice=0;
 const userCheck=document.querySelector(".userCheck")
 userCheck.addEventListener("click",async(e)=>{
-    console.log('check')
         await axios.get("/api/v1/loginInfo").then((response)=>{
             tags[1].style.pointerEvents="auto"
             tags[1].style.opacity="1"
             tags[1].click()
-            console.log(response)
             document.querySelector("#firstName").value=response.data.msg.first_name
             document.querySelector("#lastName").value=response.data.msg.last_name
             document.querySelector("#email").value=response.data.msg.email
@@ -54,7 +54,6 @@ userCheck.addEventListener("click",async(e)=>{
                         }
                     }
                 }
-                console.log(userAddressInput[0].value)
                 userAddress.first_name=userAddressInput[0].value
                 userAddress.last_name=userAddressInput[1].value
                 userAddress.e_mail=userAddressInput[2].value
@@ -80,14 +79,14 @@ userCheck.addEventListener("click",async(e)=>{
                         document.querySelector(".finalCheckBtn").style.pointerEvents="auto"
                         document.querySelector(".finalCheckBtn").children[0].innerText="Continue"
                         document.querySelector(".finalCheckBtn").addEventListener('click',function(){
-                            console.log(userAddress)
                             const productInfo=[]
+                            const ProdName=document.querySelectorAll(".ProdName")
                             for(let i=0;i<prodItemsId.length;i++){
-                                const tempObj=[prodItemsId[i],prodItemsCount[i]]
+                                const tempObj=[prodItemsId[i],prodItemsCount[i],ProdName[i].innerText]
                                 productInfo.push(tempObj)
                             }
                             this.children[0].innerText="Loading..."
-                            axios.post("/api/v1/placeOrder",{userAddress,"productInfo":productInfo,"totalPrice":totalPrice,"date":new Date().toLocaleString()}).then((response)=>{
+                            axios.post("/api/v1/placeOrder",{userAddress,"productInfo":productInfo,"totalPrice":totalPrice,"date":new Date().toLocaleString(),"totalPrice":document.querySelector(".totalPriceOrder").innerText}).then((response)=>{
                                 window.location.href="/productPurchase/prodPurchase.html?purchaseStat=true"
                                 this.children[0].innerText="Done"
                                 this.style.pointerEvents="none"
@@ -100,7 +99,6 @@ userCheck.addEventListener("click",async(e)=>{
 
             })
         }).catch((error)=>{
-            console.log(error)
             if(document.querySelector('input[name="checkOutOptn"]:checked').value==="signUp"){
                 window.location.href="../login/signUp.html"
             }
@@ -126,7 +124,6 @@ prodTag.addEventListener('click',function(){
     }
     addedVal=0;
     for(let i=0;i<this.nextElementSibling.children[0].children.length;i++){
-        console.log(i)
         if(window.getComputedStyle(this.nextElementSibling.children[0].children[i]).getPropertyValue('display')!="none"){
             addedVal+=parseInt(window.getComputedStyle(this.nextElementSibling.children[0].children[i]).getPropertyValue('height'))
             addedVal+=parseInt(window.getComputedStyle(this.nextElementSibling.children[0].children[i]).getPropertyValue('margin-top'))
@@ -135,12 +132,10 @@ prodTag.addEventListener('click',function(){
 
             addedVal+=parseInt(window.getComputedStyle(this.nextElementSibling.children[0].children[i]).getPropertyValue('padding-bottom'))
 
-            console.log(addedVal)
         }
         // console.log(addedVal)
     }
     if(window.getComputedStyle(this.nextElementSibling.children[0]).getPropertyValue('height')==="0px"){
-        console.log(addedVal)
         setTimeout(() => {
             this.nextElementSibling.children[0].style.height=`${addedVal+150}px`
         }, 1);
@@ -152,40 +147,49 @@ prodTag.addEventListener('click',function(){
         
     }
 })
-axios.get("/api/v1/checkoutInfo",{params:{ids:prodItemsId}}).then((response)=>{
-    let appendList=""
-   totalPrice=0;
-    for(let i=0;i<response.data.resp.length;i++){
-        appendList+=`<tr>
-        <td>${response.data.resp[i].p_name}</td>
-        <td>${response.data.resp[i].p_company}</td>
-        <td>${prodItemsCount[i]}</td>
-        <td>${response.data.resp[i].p_price-(response.data.resp[i].p_price-response.data.resp[i].p_discPrice)}$</td>
-        <td style="text-align:right">${(response.data.resp[i].p_price-(response.data.resp[i].p_price-response.data.resp[i].p_discPrice))*prodItemsCount[i]}$</td>
-    </tr>`
-    totalPrice+=(response.data.resp[i].p_price-(response.data.resp[i].p_price-response.data.resp[i].p_discPrice))*prodItemsCount[i]
-    }
-    appendList+=`<tr><td colspan=4>Total</td><td>${totalPrice}$</td></tr> `
-    productList.insertAdjacentHTML('afterend',appendList)
-    let verifyProf=`<span>Your name: ${response.data.userinfo[0]+" "+response.data.userinfo[1]}</span><span>Your E-mail: ${response.data.userinfo[2]}</span>
-                    <span class="changeAcct" style="margin-top:10px" onclick=goTologin()>Change your account</span>`
-    document.querySelector(".acctInfoChecked").insertAdjacentHTML('afterend',verifyProf)
- 
-        
-        document.querySelector(".uncheckedLogin").style.display="none"
-        document.querySelector(".checkedLogin").style.display="block"
-
-
-
-}).catch((error)=>{
-   
-        document.querySelector(".uncheckedLogin").style.display="block"
+const getProdInfo=async()=>{
+   await axios.get("/api/v1/checkoutInfo",{params:{ids:prodItemsId}}).then((response)=>{
+        let appendList=""
+       totalPrice=0;
+        for(let i=0;i<response.data.resp.length;i++){
+            let discountPrice=0;
+            if(response.data.resp[i].p_discPrice>0){
+                discountPrice=response.data.resp[i].p_discPrice
+            }
+            else{
+                discountPrice=response.data.resp[i].p_price
+            }
+            appendList+=`<tr>
+            <td class="ProdName">${response.data.resp[i].p_name}</td>
+            <td>${response.data.resp[i].p_company}</td>
+            <td>${prodItemsCount[i]}</td>
+            <td>${discountPrice}$</td>
+            <td style="text-align:right">${ discountPrice*prodItemsCount[i]}$</td>
+        </tr>`
+        totalPrice+=( discountPrice)*prodItemsCount[i]
+        }
+        appendList+=`<tr><td colspan=4>Total</td><td class="totalPriceOrder">${totalPrice}$</td></tr> `
+        productList.insertAdjacentHTML('afterend',appendList)
+        let verifyProf=`<span>Your name: ${response.data.userinfo[0]+" "+response.data.userinfo[1]}</span><span>Your E-mail: ${response.data.userinfo[2]}</span>
+                        <span class="changeAcct" style="margin-top:10px" onclick=goTologin()>Change your account</span>`
+        document.querySelector(".acctInfoChecked").insertAdjacentHTML('afterend',verifyProf)
+     
+            
+            document.querySelector(".uncheckedLogin").style.display="none"
+            document.querySelector(".checkedLogin").style.display="block"
     
-        document.querySelector(".checkedLogin").style.display="none"
+    
+    
+    }).catch((error)=>{
+       
+            document.querySelector(".uncheckedLogin").style.display="block"
+        
+            document.querySelector(".checkedLogin").style.display="none"
+            
         
     
-
-
-})
-
-
+    
+    })
+    
+}
+getProdInfo()

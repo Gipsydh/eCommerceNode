@@ -1,0 +1,48 @@
+.orderList{
+    width: 100%;
+    border-collapse: collapse;
+    
+}
+.productArea{
+    min-height:70vh ;
+}
+.navbar .checking{
+    top: 109px;
+}
+.ddShop{
+    top:149px;
+}
+.orderList td,tr,th{
+    border: 1px solid var(--borderColor);
+    padding: 8px;
+    font-family: roboto;
+    letter-spacing: 1px;
+    text-align: center;
+}
+.orderList th{
+    font-size: 14px;
+    color: #444444;
+    font-weight: 500;
+}
+.orderList .details{
+    
+    display: inline-block;
+    transition: 0.3s ease-in-out;
+    padding: 12px;
+    background-color: var(--buttonBlackBackground);
+    cursor: pointer;
+}
+.orderList .detailsTd{
+    text-align: end;
+}
+.orderList .details i{
+    color: white;
+}
+.orderList .details:hover{
+    background-color: var(--buttonHover);
+}
+@media all and (max-width:650px) {
+    .productArea{
+        overflow-x: scroll;
+    }
+}

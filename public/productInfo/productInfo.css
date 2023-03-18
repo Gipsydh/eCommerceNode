@@ -722,6 +722,68 @@ font-family: roboto;
     animation: prodOUFdown 0.7s 1;
 
 }
+/* .container .productArea .actions .buyingOptn .addToCart i{
+    animation: bucketSwipe 1s 1;
+}
+.container .productArea .actions .buyingOptn .addToCart span{
+    animation: bucketLetter 0.5s 1;
+} */
+@keyframes bucketLetter2 {
+    0%{
+        transform: translateY(300%);
+        opacity: 0;
+    }
+    
+    100%{
+        transform: translateY(0%);
+
+        opacity: 1;
+    }
+}
+@keyframes bucketLetter {
+    0%{
+        opacity: 1;
+    }
+    50%{
+        opacity: 1;
+    }
+    100%{
+        opacity: 0;
+    }
+}
+@keyframes bucketSwipe2 {
+    0%{
+        opacity: 0;
+        transform: translateX(-500%);
+
+    }
+    20%{
+        transform: translateX(-500%);
+    }
+    40%{
+        opacity: 1;
+    }
+    100%{
+        transform: translateX(0%);
+        opacity: 1;
+
+    }
+}
+@keyframes bucketSwipe {
+    0%{
+
+    }
+    20%{
+        transform: translateX(-110%);
+    }
+    40%{
+        opacity: 1;
+    }
+    100%{
+        transform: translateX(700%);
+        opacity: 0;
+    }
+}
 @keyframes prodOUFup {
    0%{
     transform: translateY(-100%);
