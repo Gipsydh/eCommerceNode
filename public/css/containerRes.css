@@ -1,5 +1,6 @@
 .container .productArea{
     width: 1260px;
+    min-height: 50vh;
 }
 @media all and (max-width:1300px){
     .container .productArea{

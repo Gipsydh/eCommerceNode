@@ -81,8 +81,9 @@ userCheck.addEventListener("click",async(e)=>{
                         document.querySelector(".finalCheckBtn").addEventListener('click',function(){
                             const productInfo=[]
                             const ProdName=document.querySelectorAll(".ProdName")
+                            const ProdPrice=document.querySelectorAll(".ProdPrice")
                             for(let i=0;i<prodItemsId.length;i++){
-                                const tempObj=[prodItemsId[i],prodItemsCount[i],ProdName[i].innerText]
+                                const tempObj=[prodItemsId[i],prodItemsCount[i],ProdName[i].innerText,ProdPrice[i].innerText]
                                 productInfo.push(tempObj)
                             }
                             this.children[0].innerText="Loading..."
@@ -163,7 +164,7 @@ const getProdInfo=async()=>{
             <td class="ProdName">${response.data.resp[i].p_name}</td>
             <td>${response.data.resp[i].p_company}</td>
             <td>${prodItemsCount[i]}</td>
-            <td>${discountPrice}$</td>
+            <td class="ProdPrice">${discountPrice}$</td>
             <td style="text-align:right">${ discountPrice*prodItemsCount[i]}$</td>
         </tr>`
         totalPrice+=( discountPrice)*prodItemsCount[i]

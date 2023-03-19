@@ -23,6 +23,7 @@ h2{
     margin-bottom: 30px;
 }
 .productArea .tag{
+    cursor: pointer;
     width: 100%;
     display: flex;
     justify-content: space-between;

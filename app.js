@@ -9,6 +9,7 @@ const oneProductShop=require("./routes/user_productDetails")
 const session=require('cookie-session')
 const userLogin=require("./routes/userLogin")
 const checkout=require("./routes/checkout")
+const orderInfo=require("./routes/orderInfo")
 require('dotenv').config()
 app.use(session({
     secret:process.env.SESSION_SECRET,
@@ -17,7 +18,7 @@ app.use(session({
 }))
 
 app.use(express.json())
-app.use("/api/v1",homeProducts,oneProductShop,userLogin,productReview,checkout)
+app.use("/api/v1",homeProducts,oneProductShop,userLogin,productReview,checkout,orderInfo)
 app.use("/adminPanel/api/v1",products)
 
 app.use(express.static('./public'))

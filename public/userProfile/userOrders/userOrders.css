@@ -1,4 +1,51 @@
+.navbar .checking{
+    top: 109px;
+}
+.ddShop{
+    top:149px;
+}
 table,th,tr,td{
-    border: 1px solid black;
+    border: 1px solid var(--borderColor);
     border-collapse: collapse;
+    padding: 8px;
+}
+.productArea table, .productArea th, .productArea tr,.productArea td, .productArea span{
+    
+    font-family: roboto;
+    font-size:14px ;
+    font-weight: 400;
+    letter-spacing: 1px;
+    color: #222;
+    line-height: 1.4;
+}
+table{
+    margin-bottom: 20px;
+    width: 100%;
+}
+.bind .key{
+    font-weight: 500;
+}
+.orderDetails td,th, .orderAddress td,th{
+    text-align: start;
+}
+h2{
+    font-family: roboto;
+    margin-top:20px ;
+    margin-bottom: 10px;
+    color: #333333;
+    letter-spacing: 1px;
+}
+.continue-btn{
+    padding: 12px 24px;
+    background-color: #222;
+    display: inline-block;
+    float: right;
+    margin-bottom: 20px;
+    transition: 0.3s ease-in-out;
+}
+.continue-btn span{
+    color: white;
+}
+.continue-btn:hover{
+    background-color: var(--buttonHover);
 }

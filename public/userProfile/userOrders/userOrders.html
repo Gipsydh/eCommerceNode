@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Order Information</title>
     <link rel="stylesheet" href="../../css/containerRes.css">
     <link rel="stylesheet" href="../../css/headerPoster.css">
     <link rel="stylesheet" href="../../css/homepage_modules/navbar.css">
@@ -41,105 +41,172 @@
 
                     </a>
                     <i class="fa-solid fa-angle-right" style="font-size:12px; margin:0px 15px;"></i>
-                    <span>Account</span>
+                    <a href="../userProfile.html">
+
+                        <span>Account</span>
+                    </a>
+                    <i class="fa-solid fa-angle-right" style="font-size:12px; margin:0px 15px;"></i>
+                    <a href="../orderList/orderList.html">
+
+                        <span>Order History</span>
+                    </a>
+                    <i class="fa-solid fa-angle-right" style="font-size:12px; margin:0px 15px;"></i>
+                    <span>Order Information</span>
                 </div>
             </div>
         </div>
         <div class="productArea">
             <div class="header">
                 <h2>Order History</h2>
-                <table class="orderDetails">
-                    <th colspan="2">Order Details</th>
+            </div>
 
-                    <tr>
-                        <td>
-                            <div class="bind">
+            <table class="orderDetails">
+                <th colspan="2">Order Details</th>
 
-                                <span class="key">
-                                    Order Id:
-                                </span>
-                                <span class="value">
-                                    #5
-                                </span>
-                            </div>
-                            <div class="bind">
+                <tr>
+                    <td>
+                        <div class="bind">
 
-                                <span class="key">
-                                    Date Added:
-                                </span>
-                                <span class="value">
-                                    20/10/2021
-                                </span>
-                            </div>
+                            <span class="key">
+                                Order Id:
+                            </span>
+                            <span class="value res_orderId">
+                                #5
+                            </span>
+                        </div>
+                        <div class="bind">
 
-                        </td>
-                        <td>
-                            <div class="bind">
-
-                                <span class="key">
-                                    Payment Method:
-                                </span>
-                                <span class="value">
-                                    Cash On Delevery
-                                </span>
-                            </div>
-                            <div class="bind">
-
-                                <span class="key">
-                                    Shipping Method:
-                                </span>
-                                <span class="value">
-                                    Flat Shipping Rate
-                                </span>
-                            </div>
-
-                        </td>
-                    </tr>
-                </table>
-                <table class="orderAddress">
-                    <tr>
-                        <th>Shipping Address</th>
-                    </tr>
-                    <tr>
-                        <td>
-                            <div class="bind">
-                                <span class="user_name">My name</span>
+                            <span class="key">
+                                Date Added:
+                            </span>
+                            <span class="value res_orderDate">
                                 
-                            </div>
-                            <div class="bind">
-                                <span class="user_company">My Company</span>
-                                
-                            </div>
-                            <div class="bind">
-                                <span class="user_address1">
-                                    user address 1
-                                </span>
-                            </div>
-                            <div class="bind">
-                                <span class="user_address2">
-                                    user address 2
-                                </span>
-                            </div>
-                            <div class="bind">
-                                <span class="user_city_pin">
-                                     <span>city</span>
-                                     <span>pin code</span>
-                                </span>
-                            </div>
-                            <div class="bind">
-                                <span class="dist">
-                                    district
-                                </span>
+                            </span>
+                        </div>
 
-                            </div>
-                            <div class="bind">
-                                <span class="country">
-                                    country
-                                </span>
-                            </div>
-                        </td>
-                    </tr>
-                </table>
+                    </td>
+                    <td>
+                        <div class="bind">
+
+                            <span class="key">
+                                Payment Method:
+                            </span>
+                            <span class="value">
+                                Cash On Delevery
+                            </span>
+                        </div>
+                        <div class="bind">
+
+                            <span class="key">
+                                Shipping Method:
+                            </span>
+                            <span class="value">
+                                Flat Shipping Rate
+                            </span>
+                        </div>
+
+                    </td>
+                </tr>
+            </table>
+            <table class="orderAddress">
+                <tr>
+                    <th>Shipping Address</th>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="bind">
+                            <span class="user_name res_user_name">My name</span>
+
+                        </div>
+                        <div class="bind">
+                            <span class="user_company res_user_company">My Company</span>
+
+                        </div>
+                        <div class="bind">
+                            <span class="user_address1 res_user_address1">
+                                user address 1
+                            </span>
+                        </div>
+                        <div class="bind">
+                            <span class="user_address2 res_user_address2">
+                                user address 2
+                            </span>
+                        </div>
+                        <div class="bind">
+                            <span class="user_city_pin">
+                                <span class="res_city">city</span>
+                                <span class="res_pin">pin code</span>
+                            </span>
+                        </div>
+                        <div class="bind">
+                            <span class="dist">
+                                district
+                            </span>
+
+                        </div>
+                        <div class="bind">
+                            <span class="country">
+                                country
+                            </span>
+                        </div>
+                    </td>
+                </tr>
+            </table>
+            <table class="productList">
+                <tr class="productDetailsTableHeader">
+                    <th>Product Name</th>
+                    <th>Model</th>
+                    <th>Quantity</th>
+                    <th>Price</th>
+                    <th>Total</th>
+
+                </tr>
+                
+                <tr>
+                    <td colspan="3"></td>
+                    <td>Sub-Total</td>
+                    <td class="subTotalProductPrice"></td>
+
+                </tr>
+                <tr>
+                    <td colspan="3"></td>
+                    <td>Flat Shipping Rate</td>
+                    <td>0$</td>
+
+
+                </tr>
+                <tr>
+                    <td colspan="3"></td>
+                    <td>Total</td>
+                    <td class="totalProductPrice">1000$</td>
+
+                </tr>
+            </table>
+            <table class="orderComment">
+                <tr>
+                    <td>Order Comment</td>
+                </tr>
+                <tr>
+                    <td class="res_orderComment">
+                        this is the Comment
+                    </td>
+                </tr>
+            </table>
+            <h2>Order History</h2>
+            <table class="orderHistory">
+                <tr>
+                    <th>Date Added</th>
+                    <th>Status</th>
+                    <th>Comment</th>
+                </tr>
+                <tr>
+                    <td class="res_orderDate">10/10/2022</td>
+                    <td class="res_statusPending">Pending</td>
+                    <td></td>
+                </tr>
+            </table>
+            <div class="btn continue-btn">
+                <span>Go back</span>
             </div>
         </div>
         <div class="footer">
@@ -155,6 +222,7 @@
     <script src="../../js/footer.js"></script>
     <script src="../../js/navbar_app.js"></script>
     <script src="../../js/navbar.js"></script>
+    <script src="./userOrders.js"></script>
 
 </body>
 

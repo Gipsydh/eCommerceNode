@@ -77,11 +77,13 @@ const placeOrder=async(req,res)=>{
             else{
                 discountPrice=allProductInfo[i].p_price
             }
+            senderInfoInner+=`<tr>`
             senderInfoInner+=`<td>${allProductInfo[i].p_name}</td>
             <td>${allProductInfo[i].p_id}</td>
             <td>${req.body.productInfo[i][1]}</td>
             <td>${discountPrice}$</td>
             <td>${discountPrice*parseInt(req.body.productInfo[i][1])}$</td>`
+            senderInfoInner+=`</tr>`
             totalMailPrice+=(discountPrice*parseInt(req.body.productInfo[i][1]))
         }
         let sendInfoOuter=`
