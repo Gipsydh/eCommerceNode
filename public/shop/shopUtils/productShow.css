@@ -1,0 +1,319 @@
+.container .productArea{
+    width: 100%;
+    padding: 0 15px;
+}
+.productArea .showProducts{
+    display: flex;
+    flex-wrap: wrap;
+
+}
+.productArea .showProducts .card{
+    overflow: hidden;
+    margin-bottom: 30px;
+    padding: 0 15px;
+
+
+}
+.productArea .showProducts .card .moreOptns .option{
+    transition: 0.3s ease-in-out;
+}
+.productArea .showProducts .card .moreOptns .option:hover{
+     background-color: var(--buttonHover);
+     color: white;
+}
+.productArea .showProducts .card .moreOptns .option{
+    padding: 10px 14px;
+    
+    box-shadow: 0 1px 6px 0 rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.productArea .showProducts .card .moreOptns .option span{
+    font-family: jost;
+    font-weight: 500;
+    margin-left: 10px;
+}
+.productArea .showProducts .card .name{
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}
+.productArea .showProducts .rating{
+    display: inline-block;
+    position: relative;
+    overflow: hidden;
+    margin-right: 10px;
+    padding-right: 10px;
+}
+.productArea .showProducts .rating .box{
+    height: 100%;
+}
+.productArea .showProducts .rating .box{
+    z-index: 10;
+    color: var(--starColor);
+    position: relative;
+}
+.productArea .showProducts .rating .slider{
+    position: absolute;
+    background-color: rgb(255, 255, 255);
+    width: calc(100% - 10px);
+    height: 100%;
+    top: 0;
+    z-index: 9;
+    left: 0%;
+    transform: translateX(0%);
+}
+.productArea .showProducts .rating .fill{
+    position: absolute;
+    top:0;
+    left:0;
+    z-index: 8;
+    color: var(--starColor);
+
+}
+/* ................................grid viwe................................ */
+.productArea .showProducts .grid{
+    box-sizing: border-box;
+    width: calc(100% / 6);
+    padding: 0 15px;
+    transition: 0.3s ease-in-out;
+}
+
+.productArea .showProducts .grid .img{
+    margin-bottom: 15px;
+}
+.productArea .showProducts .grid .rating{
+    display: none;
+}
+.productArea .showProducts .grid .img img{
+    width: 100%;
+}
+.productArea .showProducts .grid .moreOptns{
+    display: none;
+}
+.productArea .showProducts .grid .elm{
+
+    margin-bottom: 5px;
+}
+.productArea .showProducts .card .name span,.productArea .showProducts .card .price span{
+    font-family: jost;
+}
+.productArea .showProducts .card .name span{
+    color: #444444;
+    font-size: 14px;
+    font-weight: 400;
+
+}
+.productArea .showProducts .grid .details{
+    display: none;
+}
+.productArea .showProducts .card .price span{
+    color: #222;
+    font-size: 16px;
+    font-weight: 600;
+    
+}
+.productArea .showProducts .grid .moreOptns{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: translate(-120%,-291%);
+    background-color: white;
+    transition: 0.3s ease-in-out;
+
+}
+.productArea .showProducts .grid .moreOptns span{
+    display: none;
+}
+.productArea .showProducts .grid .moreOptns .option{
+    padding: 10px;
+    box-shadow: none;
+
+}
+.productArea .showProducts .grid:hover {
+    cursor: pointer;
+}
+.productArea .showProducts .grid:hover .moreOptns{
+    transform: translate(0%,-291%);
+
+
+}
+@media all and (max-width:1400px) {
+    .productArea .showProducts .grid{
+        width: calc(100% / 5);
+    }
+
+}
+@media all and (max-width:1200px) {
+    .productArea .showProducts .grid{
+        width: calc(100% / 3);
+    }
+
+}
+@media all and (max-width:650px) {
+    .productArea .showProducts .grid{
+        width: calc(100% / 2);
+    }
+    .productArea .showProducts .card{
+       margin-bottom: 5px;
+    
+    
+    }
+
+}
+/* ................................list viwe................................ */
+.productArea .showProducts .list{
+    width: calc(100% / 2);
+    display: flex;
+}
+.productArea .showProducts .list .img{
+    width: 25%;
+}
+.productArea .showProducts .list .img img{
+    width: 100%;
+}
+.productArea .showProducts .list .bind{
+    display: flex;
+    flex-direction: column;
+    padding: 0 30px;
+    width: 75%;
+}
+.productArea .showProducts .list .bind .elm{
+    margin-bottom: 15px;
+}
+.productArea .showProducts .list .moreOptns{
+    display: flex;
+}
+.productArea .showProducts .list .moreOptns .option{
+    margin-right: 5px;
+}
+.productArea .showProducts .list .details{
+    display: block;
+}
+.productArea .showProducts .list .details span, .productArea .showProducts .list .name span{
+    font-size: 16px;
+    font-weight: 400;
+    color: #444444;
+    letter-spacing: 1px;
+}
+@media all and (max-width:1200px) {
+    .productArea .showProducts .list{
+        width: 100%;
+    }
+    .productArea .showProducts .list .bind .elm{
+        margin-bottom: 5px;
+    }
+
+}
+@media all and (max-width:800px) {
+    .productArea .showProducts .list{
+        margin: 20px 0;
+    }
+    .productArea .showProducts .rating i{
+        font-size: 14px;
+
+    }
+    .productArea .showProducts .list .moreOptns{
+        justify-content: center;
+    }
+    .productArea .showProducts .list .bind{
+        padding: 0;
+        padding-left: 20px;
+    }
+    .productArea .showProducts .rating {
+        margin: 15px 0 0 0;
+        padding: 0;
+    }
+    .productArea .showProducts .list .details span, .productArea .showProducts .list .name span{
+        font-size: 12px;
+       
+    }
+
+    .productArea .showProducts .card .moreOptns .option span{
+        font-size: 12px;
+    }
+    .productArea .showProducts .card .moreOptns .option{
+        padding: 5px 7px;
+    }
+}
+@media all and (max-width:450px) {
+    .productArea .showProducts .list{
+        flex-direction: column;
+        align-items: center;
+    }
+    .productArea .showProducts .list .bind{
+        width: 100%;
+        text-align: center;
+        padding: 0;
+
+    }
+    .productArea .showProducts .list .img{
+        width: 75%;
+    }
+}
+
+/* ................................sort viwe................................ */
+.productArea .showProducts .sort{
+    width: 100%;
+    display: flex;
+
+}
+.productArea .showProducts .sort .img{
+    width: 30%;
+    
+}
+.productArea .showProducts .sort .img img{
+    width: 100%;
+}
+.productArea .showProducts .sort .details{
+    display: none;
+}
+.productArea .showProducts .sort .bind{
+    display: flex;
+    width: 100%;
+    justify-content:space-around;
+    padding-left: 30px;
+    align-items: start;
+
+}
+.productArea .showProducts .sort .bind .elm{
+    margin: 0 auto;
+}
+.productArea .showProducts .sort .bind .bind2{
+    margin-right: auto;
+}
+.productArea .showProducts .sort .moreOptns{
+    display: inline-flex;
+    flex-direction: row;
+
+}
+
+.productArea .showProducts .sort .moreOptns .option{
+    margin-right:10px ;
+}
+@media all and (max-width:800px) {
+    .productArea .showProducts .sort .img{
+        width: 75%;
+    }
+    .productArea .showProducts .sort .bind{
+        flex-direction: column;
+        height: auto;
+        text-align: center;
+        align-items: center;
+    }
+    .productArea .showProducts .sort .bind .bind2{
+        margin: 0;
+
+    }
+    .productArea .showProducts .sort{
+        margin-bottom: 20px;
+    }
+    .productArea .showProducts .sort{
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+}

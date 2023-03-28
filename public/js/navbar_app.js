@@ -1,6 +1,10 @@
 const shopDDlist = document.querySelector(".ddShop .ddShopInfo")
 const shopDDlistMob = document.querySelector(".navbar .checking .ddShopInfo")
 const accountsBtn = document.querySelector(".container .navbar .topBar .accounts")
+const shopBtn=document.querySelector(".container .navbar .bottomBar .bottomNavbar .shopNavbar")
+shopBtn.addEventListener("click",function(){
+    window.location.href="../shop/shop.html?pageId=1"
+})
 function goToHome() {
     console.log("working")
     window.location.href = "/"
@@ -279,6 +283,6 @@ cartCheckout.addEventListener('click', async () => {
         // for(let i=0;i<response.data.resp.length;i++){
         //     paramPayloadID+=`${response.data.resp[i].p_obj_id}&prodCount=${response.data.resp[i].p_count}`
         // }
-        window.location.href = `../productPurchase/prodPurchase.html?${paramPayloadID}&${paramPayloadCount}`
+        window.location.href = `../../productPurchase/prodPurchase.html?${paramPayloadID}&${paramPayloadCount}`
     })
 })

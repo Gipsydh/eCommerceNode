@@ -1,0 +1,216 @@
+.productArea .arrange{
+    width: 100%;
+    display: flex;
+    border: 1px solid var(--borderColor);
+    align-items: center;
+    justify-content: space-between;
+    margin: 20px 0;
+}
+.productArea .arrange .arrangeElm{
+    padding: 11px 0;
+}
+.productArea .arrange .showingOptns{
+    display: flex;
+    padding-left: 15px;
+}
+.productArea .arrange .showingOptns i{
+    transition: 0.3s ease-in-out;
+
+}
+.productArea .arrange .showingOptns i:hover{
+    color: #222;
+}
+.productArea .arrange i{
+    color: var(--text-secondary);
+}
+.productArea .arrange .showingOptns i{
+    margin-right: 10px;
+
+}
+.productArea .arrange .sortNsizeNfilter{
+    display: flex;
+}
+.productArea .arrange .sortNsizeNfilter select{
+    padding: 4px 12px;
+    border: 1px solid var(--borderColor);
+    background-color: white;
+    margin-right: 20px;
+    color: var(--topBar);
+    font-family: roboto;
+}
+.productArea .arrange .sortNsizeNfilter option{
+    font-family: roboto;
+
+}
+.productArea .arrange .sortNsizeNfilter label,.productArea .arrange .sortNsizeNfilter span{
+    font-size: 12px;
+    color: #222;
+    font-weight: 500;
+    margin-right: 5px;
+    letter-spacing: 1px;
+    
+}
+.productArea .arrange .sortNsizeNfilter .filterBox{
+    margin-left: 30px;
+    width: 85px;
+    border-left: 1px solid var(--borderColor);
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+.sortListContainer{
+    position: fixed;
+    height: 100vh;
+    width: 100vw;
+   z-index: 10000;
+    background-color: rgb(0, 0, 0,0.2);
+    top: 0;
+    left: 0;
+    display: none;
+}
+.sortListContainer .sortList{
+    padding: 15px;
+    background-color: white;
+    position: absolute;
+    right: 0;
+    width: 320px;
+    height: 100vh;
+    transition: 0.5s ease-in-out;
+    /* display: none; */
+    
+}
+.sortListContainer .sortList .closeBtn{
+    background-color: white;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: translateX(-50%);
+    border-radius: 50%;
+    padding: 3px 7.5px;
+    box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.5);
+    color: var(--text-secondary);
+}
+.sortListContainer .sortList .header{
+    border-bottom: 1px solid var(--borderColor);
+    padding: 10px 0px;
+    margin-bottom: 10px;
+
+}
+.sortListContainer .sortList .header h2{
+    font-family: roboto;
+    font-size:16px ;
+    font-weight: 600;
+    letter-spacing: 1px;
+    color: #222;
+}
+
+.sortListContainer .sortList .options{
+    overflow-y: scroll;
+}
+.sortListContainer .sortList .options .listOption span{
+    font-size: 14px;
+    font-weight: 400;
+}
+.sortListContainer .sortList .options .listOption{
+    padding: 12px 0;
+    display: flex;
+    justify-content: space-between;
+    cursor: pointer;
+    border-bottom: 1px solid var(--borderColor);
+}
+.sortListContainer .sortList .options .listOption i{
+    font-size: 10px;
+    transform: rotateX(180deg);
+}
+.sortListContainer .sortList .options .optionDetails{
+    /* display: none; */
+    padding: 10px 0;
+    transition: 0.3s ease-in-out;
+    overflow: hidden;
+
+}
+.sortListContainer .sortList .options .optionDetails span{
+    color: var(--text-secondary);
+    font-size: 13px;
+    font-weight: 400;
+}
+.sortListContainer .sortList .options .optionDetails .option{
+    padding: 5px 0;
+}
+.sortListContainer .sortList .options .optionDetails .option input{
+    margin-right: 3px;
+    border: 1px solid var(--borderColor);
+}
+.sortListContainer .sortList .options .priceDetails{
+    position: relative;
+}
+.sortListContainer .sortList .options .priceDetails input[type="number"]{
+    width: 88px;
+    appearance: textfield;
+    padding: 10px;
+    text-align: center;
+
+}
+.sortListContainer .sortList .options .priceDetails .inputRange{
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    margin: 25px 0px;
+}
+.sortListContainer .sortList .options .priceDetails .setRange{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.sortListContainer .sortList .options .priceDetails .setRange input{
+    position: absolute;
+}
+@media all and (max-width:760px) {
+    .sortListContainer .sortList .bind{
+    
+        border-bottom: 1px solid var(--borderColor);
+    }
+    .productArea .arrange .arrangeElm{
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+    .productArea .arrange{
+        flex-direction: column;
+        align-items: start;
+    }
+    .productArea .arrange .sortNsizeNfilter .filterBox{
+        display: none;
+    }
+    .productArea .arrange .sortNsizeNfilter{
+        flex-direction: column-reverse;
+        padding-left: 15px;
+    }
+    .sortListContainer{
+        height: auto;
+        width: auto;
+        display: block;
+        position: relative;
+        padding: 20;
+        border: 1px solid var(--borderColor);
+    }
+    .sortListContainer .sortList{
+        position: relative;
+        width: 100%;
+        height: auto;
+    }
+    .sortListContainer .sortList .closeBtn,.sortListContainer .sortList .header{
+        display: none;
+    }
+    .sortListContainer .sortList .options .listOption{
+        border: none;
+    }
+    
+    .sortListContainer .sortList .bind:nth-last-child(1){
+        border: none;
+    }
+    .sortListContainer .sortList .options .optionDetails{
+        display: none;
+    }
+}
