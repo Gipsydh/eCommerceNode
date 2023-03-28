@@ -158,7 +158,7 @@ document.querySelector('.navbar').outerHTML = `
                     <span>Option 5</span>
                 </div>
             </div>
-            <div class="option">
+            <div class="option ddShopLink">
                 <div class="optionName">
                     <span>Shop</span>
                 </div>

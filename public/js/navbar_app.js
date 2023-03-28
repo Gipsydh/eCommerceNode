@@ -14,6 +14,9 @@ console.log(accountsBtn)
 //     const resp=await axios.get('/api/v1/currStatus')
 //     console.log(resp.body)
 // }
+document.querySelector(".ddShopLink").addEventListener("click",function(){
+    window.location.href="../../shop/shop.html?pageId=1"
+})
 accountsBtn.addEventListener('click', async (e) => {
     console.log("yes")
     await axios.get('/api/v1/currStatus').then((response) => {
