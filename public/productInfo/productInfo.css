@@ -371,7 +371,7 @@ margin-bottom: 10px;
     display: flex;
     scroll-behavior: smooth;
     justify-content: flex-start;
-    align-items: center;
+    align-items: flex-start;
     overflow-x: scroll;
     -ms-overflow-style: none;  /* Internet Explorer 10+ */
     scrollbar-width: none;  /* Firefox */
@@ -395,7 +395,6 @@ margin-bottom: 10px;
 
 }
 .container .productArea .relativeProduct .scrollOptns .productCard{
-    min-width: calc(100% / 4);
     padding: 0 15px;
     scroll-snap-align: start;
     margin-bottom: 30px;
@@ -403,6 +402,8 @@ margin-bottom: 10px;
 
 .container .productArea .relativeProduct .scrollOptns .productCard .productImg{
     margin: 0 0 15px 0;
+    width: 290px;
+
 }
 .container .productArea .relativeProduct .scrollOptns .productCard img{
     width: 100%;
@@ -412,6 +413,8 @@ margin-bottom: 10px;
     padding: 0;
     margin: 0;
     letter-spacing: 1px;
+    width: 290px;
+
 }
 .container .productArea .relativeProduct .scrollOptns .productCard .productName span{
     font-size: 16px;

@@ -37,12 +37,12 @@
 }
 .container .trending1 .options .card{
     margin-bottom: 30px;
-    height: 600px;
+    /* height: 600px; */
     width: calc(100% / 3 - 40px);
     cursor: pointer;
 }
 .container .trending1 .options .card .productImg{
-    height: 80%;
+    /* height: 80%; */
     width: 100%;
     position: relative;
     display: flex;
@@ -130,6 +130,10 @@
 }
 .container .trending1 .options .card .productInfo .productName span{
     font-size: 20px;
+    font-family: jost;
+    font-weight: 400;
+    text-align: center;
+    display: block;
 }
 .container .trending1 .options .card .productPrice .true{
    
@@ -138,7 +142,7 @@
     color: var(--topBar);
 }
 .container .trending1 .options .card .productInfo .productPrice span{
-    font-weight: 300;
+    font-weight: 500;
 }
 .container .trending1 .options .card .productInfo .newPrice{
     display: none;
@@ -153,10 +157,10 @@
         width: 1000px;
     }
     .container .trending1 .options .card{
-        height: 450px;
+        /* height: 450px; */
     }
     .container .trending1 .options .card .productImg img{
-        scale: 0.7;
+        /* scale: 0.7; */
     }
     .container .trending1 .options .card .productImg .productState .states{
         width: 50px;
@@ -187,11 +191,11 @@
     }
     .container .trending1 .options .card{
         
-        height: 350px;
+        /* height: 350px; */
         width: calc(100% / 3 - 20px);
     }
     .container .trending1 .options .card .productImg img{
-        scale: 0.5;
+        /* scale: 0.5; */
     }
     .container .trending1 .options .card .productImg .productImgWrapper .productHoverView{
         height: 40px;
@@ -222,11 +226,11 @@
     }
     .container .trending1 .options .card{
         
-        height: 400px;
+        /* height: 400px; */
         width: calc(100% / 2 - 20px);
     }
     .container .trending1 .options .card .productImg img{
-        scale: 0.55;
+        /* scale: 0.55; */
     }
 }
 @media all and (max-width:500px){
@@ -241,11 +245,11 @@
         
     }
     .container .trending1 .options .card .productImg img{
-        scale: 0.35;
+        /* scale: 0.35; */
     }
     .container .trending1 .options .card{
         
-        height: 250px;
+        /* height: 250px; */
         width: calc(100% / 2 - 10px);
     }
     .container .trending1 .options .card .productImg .productState .states{
@@ -257,6 +261,7 @@
     }
     .container .trending1 .options .card .productInfo .productName span, .container .trending1 .options .card .productInfo .productPrice span{
         font-size: 15px;
+        
     }
     .container .trending1 .options .card .productImg .productState .states{
         min-height: 10px;

@@ -14,6 +14,9 @@ console.log(accountsBtn)
 //     const resp=await axios.get('/api/v1/currStatus')
 //     console.log(resp.body)
 // }
+document.querySelector(".container .navbar .bottomBar .bottomNavbar .homeNavbar").addEventListener('click',function(){
+    window.location.href="../../index.html"
+})
 document.querySelector(".ddShopLink").addEventListener("click",function(){
     window.location.href="../../shop/shop.html?pageId=1"
 })

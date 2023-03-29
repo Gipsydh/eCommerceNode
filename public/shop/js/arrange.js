@@ -24,6 +24,8 @@ function viewPageList(length, totalProduct) {
     if (remainder > 0) {
         pageCount++;
     }
+    let addedData3=`Showing page ${(length*(parseInt(pageId)-1))+1} to ${length*parseInt(pageId)>totalProduct? totalProduct:length*parseInt(pageId)} of ${totalProduct} (${Math.ceil(pageCont)} pages)`
+    document.querySelector(".pageNumber .pageInfo span").innerText=addedData3
     pageBack.innerHTML = addedData2
 }
 const addCompany = document.querySelector(".sortListContainer .sortList .options .companyList")
@@ -238,7 +240,7 @@ const getSortedProd = async (flag) => {
         for (const key in response.data.payloadSession) {
             document.cookie = `${encodeURIComponent(key)}=${decodeURIComponent(response.data.payloadSession[key])}`
         }
-        
+        document.querySelector("title").innerText="Shop"
 
         viewPageList(payload.productPageLength, response.data.length)
     })

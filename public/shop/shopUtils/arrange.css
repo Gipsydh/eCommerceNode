@@ -214,3 +214,8 @@
         display: none;
     }
 }
+@media all and  (max-width:800px) {
+    .sortListContainer{
+        z-index: 500;
+    }
+}
