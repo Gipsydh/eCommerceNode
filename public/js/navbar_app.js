@@ -17,8 +17,20 @@ console.log(accountsBtn)
 document.querySelector(".container .navbar .bottomBar .bottomNavbar .homeNavbar").addEventListener('click',function(){
     window.location.href="../../index.html"
 })
-document.querySelector(".ddShopLink").addEventListener("click",function(){
-    window.location.href="../../shop/shop.html?pageId=1"
+document.querySelector(".ddShopLink").addEventListener("click",(e)=>{
+    if(e.target.classList.contains("ddShopLink") || e.target.tagName==="SPAN"){
+
+        window.location.href="../../shop/shop.html?pageId=1"
+    }
+    // console.log(e.target.tagName)
+    // console.log(e.target)
+})
+document.querySelector(".ddHomeInfo").addEventListener("click",(e)=>{
+    if(e.target.classList.contains("ddHomeInfo")|| e.target.tagName==="SPAN"){
+        window.location.href="/"
+    }
+    console.log(e.target)
+
 })
 accountsBtn.addEventListener('click', async (e) => {
     console.log("yes")

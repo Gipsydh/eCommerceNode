@@ -1,8 +1,8 @@
 const express=require('express')
 const app=express()
 const connectDB=require("./db/connect")
-const jsonProduct=require("./products.json")
-const Products=require("./models/products")
+const jsonProduct=require("./country_list.json")
+const Products=require("./models/countryLists")
 require('dotenv').config();
 
 const start=async()=>{

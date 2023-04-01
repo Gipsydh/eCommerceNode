@@ -2,6 +2,7 @@ const products=require("../models/products")
 const orders=require("../models/orders")
 const users=require("../models/users")
 const carts=require("../models/carts")
+const countryLists=require("../models/countryLists")
 const nodemailer=require('nodemailer')
 const checkoutInfo=async(req,res)=>{
     try {
@@ -13,6 +14,25 @@ const checkoutInfo=async(req,res)=>{
         return res.status(400).json({msg:"no products can be fetched"})
     }
     
+}
+const getCountryList=async(req,res)=>{
+    try {
+        const resp=await countryLists.find({});
+        return res.status(200).json({resp})
+    } catch (error) {
+        return res.status(404).json({"msg":"something wrong happened"})
+    }
+}
+const getStateList=async(req,res)=>{
+    try {
+        const resp=await countryLists.find({country:req.query.country})
+        return res.status(200).json(resp)
+
+    } catch (err) {
+        console.log(err)
+        return res.status(404).json({"msg":"something wrong happened"})
+
+    }
 }
 const loginInfo=async(req,res)=>{
    
@@ -157,5 +177,7 @@ module.exports={
     checkoutInfo,
     loginInfo,
     placeOrder,
-    checkQuantity
+    checkQuantity,
+    getCountryList,
+    getStateList
 }

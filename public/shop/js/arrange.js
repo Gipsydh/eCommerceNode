@@ -180,6 +180,14 @@ const getSortedProd = async (flag) => {
         for (let i = 0; i < response.data.response.length; i++) {
             let p_rating = response.data.response[i].p_rating
             p_rating = (100 * p_rating) / 5;
+            let p_disc=0;
+            let styleText=""
+            let styleText2=`style="display:none;"`
+            if(response.data.response[i].p_discPrice>0){
+                p_disc=response.data.response[i].p_discPrice
+                styleText=`style="text-decoration:line-through;font-size:12px;color:#929292;"`
+                styleText2=`style="display:inline-block;"`
+            }
             addData += `<a href="../productInfo/productInfo.html?prod_id=${response.data.response[i]._id}" class="card grid">
             <div class="img">
                 <img src="../../resources/${response.data.response[i].p_id}.0.jpg" alt="">
@@ -214,7 +222,8 @@ const getSortedProd = async (flag) => {
                     <span>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Blanditiis, earum.</span>
                 </div>
                 <div class="price elm">
-                    <span>${response.data.response[i].p_price}$</span>
+                    <span ${styleText}>${response.data.response[i].p_price}$</span>
+                    <span ${styleText2}> ${response.data.response[i].p_discPrice}$</span>
                 </div>
                 <div class="moreOptns elm">
                     <div class="option addCart">

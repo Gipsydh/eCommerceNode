@@ -1,3 +1,4 @@
+
 const params=window.location.search
 const purchaseStat=new URLSearchParams(params).get("purchaseStat")
 if(purchaseStat==="true"){
@@ -27,12 +28,39 @@ for(let i=1;i<tags.length;i++){
     tags[i].style.pointerEvents="none"
 }
 let totalPrice=0;
+const getCountryLists=async(req,res)=>{
+
+    await axios.get("/api/v1/getCountryList").then((response)=>{
+        let addedData4=""
+        for(let i=0;i<response.data.resp.length;i++){
+            addedData4+=`<option value="${response.data.resp[i].country}"><span>${response.data.resp[i].country}</span></option>`
+        }
+        document.querySelector(".countryOptionDefault").insertAdjacentHTML('afterend',addedData4)
+    })
+}
+getCountryLists()
 const userCheck=document.querySelector(".userCheck")
 userCheck.addEventListener("click",async(e)=>{
         await axios.get("/api/v1/loginInfo").then((response)=>{
             tags[1].style.pointerEvents="auto"
             tags[1].style.opacity="1"
             tags[1].click()
+           
+            const countryInput=document.querySelector("#country")
+            console.log("working")
+            countryInput.addEventListener("input",function(){
+                axios.get("/api/v1/getStateList",{params:{country:this.value}}).then((response)=>{
+                    let addedData5=`<option value="0" label="Select a country ... " selected="selected" class="stateOptionDefault">
+                    Select a State ...
+                </option>`
+                    for(let i=0;i<response.data[0].states.length;i++){
+                        console.log(response.data[0].states[i])
+                        addedData5+=`<option value="${response.data[0].states[i]}">${response.data[0].states[i]}</option>`
+                    }
+                    document.getElementById("state").innerHTML=addedData5
+
+                })
+            })
             document.querySelector("#firstName").value=response.data.msg.first_name
             document.querySelector("#lastName").value=response.data.msg.last_name
             document.querySelector("#email").value=response.data.msg.email
@@ -62,7 +90,9 @@ userCheck.addEventListener("click",async(e)=>{
                 userAddress.address_1=userAddressInput[5].value
                 userAddress.address_2=userAddressInput[6].value
                 userAddress.city=userAddressInput[7].value
-                userAddress.post_code=userAddressInput[8].value
+                userAddress.post_code=userAddressInput[8].value     
+                userAddress.state=document.querySelector("#state").value
+                userAddress.country=document.querySelector("#country").value
                 if( userAddcheckFlag===true){
 
                     tags[2].style.pointerEvents="auto"
@@ -87,8 +117,9 @@ userCheck.addEventListener("click",async(e)=>{
                                 productInfo.push(tempObj)
                             }
                             this.children[0].innerText="Loading..."
+                            console.log(userAddress)
                             axios.post("/api/v1/placeOrder",{userAddress,"productInfo":productInfo,"totalPrice":totalPrice,"date":new Date().toLocaleString(),"totalPrice":document.querySelector(".totalPriceOrder").innerText}).then((response)=>{
-                                window.location.href="/productPurchase/prodPurchase.html?purchaseStat=true"
+                                // window.location.href="/productPurchase/prodPurchase.html?purchaseStat=true"
                                 this.children[0].innerText="Done"
                                 this.style.pointerEvents="none"
 
@@ -138,7 +169,7 @@ prodTag.addEventListener('click',function(){
     }
     if(window.getComputedStyle(this.nextElementSibling.children[0]).getPropertyValue('height')==="0px"){
         setTimeout(() => {
-            this.nextElementSibling.children[0].style.height=`${addedVal+150}px`
+            this.nextElementSibling.children[0].style.height=`${addedVal+300}px`
         }, 1);
     }
     else{

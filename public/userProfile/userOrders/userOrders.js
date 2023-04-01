@@ -19,6 +19,8 @@ const getOrderInfo=async()=>{
         document.querySelector(".res_city").innerText=response.data[0].userAddress.city
         document.querySelector(".res_pin").innerText=response.data[0].userAddress.post_code
         document.querySelector(".res_statusPending").innerText=response.data[0].status
+        document.querySelector(".country").innerText=response.data[0].userAddress.country
+        document.querySelector(".dist").innerText=response.data[0].userAddress.state
         let addedTable=""
         let totalProductPrice=0
         for(let i=0;i<response.data[0].productInfo.length;i++){

@@ -130,7 +130,7 @@ document.querySelector('.navbar').outerHTML = `
     
         </div>
         <div class="checking mobileMoreOptns">
-            <div class="option">
+            <div class="option ddHomeInfo">
                 <div class="optionName">
     
                     <span>Home</span>
