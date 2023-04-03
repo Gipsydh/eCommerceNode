@@ -22,7 +22,7 @@ document.querySelector('.navbar').outerHTML = `
             <div class="left">
                 <div class="navbarInfo btn">
                     <i class="fa-solid fa-phone"></i>
-                    <span>8016895112</span>
+                    <span>8436432955</span>
                 </div>
                 <div class="navbarInfo btn">
                     <i class="fa-regular fa-envelope-open"></i>
@@ -117,9 +117,9 @@ document.querySelector('.navbar').outerHTML = `
                             </table>
                         </div>
                         <div class="options">
-                            <div class="btn cartDetails">
+                            <a class="btn cartDetails" href="../userCart/cartDetails.html">
                                 <span>View Cart</span>
-                            </div>
+                            </a>
                             <div class="btn cartCheckout">
                                 <span>Checkout</span>
                             </div>

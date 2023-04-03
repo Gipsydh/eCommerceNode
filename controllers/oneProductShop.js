@@ -68,4 +68,18 @@ const getSingleProductCart=async(req,res)=>{
     }
     res.status(200).json({msg:"something"})
 }
-module.exports={oneProduct,addToCartDetails,addToCart,relatedProduct,getSingleProductCart}
+const removeProductCart=async(req,res)=>{
+    try {
+        console.log(req.body)
+        carts.findOneAndDelete({_id:req.body._id}).then((response)=>{
+            console.log("deleted")
+            return res.status(200).json({msg:"successfully deleted"})
+        }).catch((err)=>{
+            console.log(err)
+        })
+        
+    } catch (error) {
+        console.log(error)
+    }
+}
+module.exports={oneProduct,addToCartDetails,addToCart,relatedProduct,getSingleProductCart,removeProductCart}

@@ -131,18 +131,18 @@ footer.innerHTML=`<div class="footerContainer">
 <div class="lower">
     <div class="socials">
         <div class="socialBlock">
-            <div class="social">
+            <a href="" class="social" title="Unavailable">
                 <i class="fa-brands fa-twitter"></i>
-            </div>
-            <div class="social">
+            </>
+            <a href ="https://www.linkedin.com/in/subhankar-naskar/" class="social">
                 <i class="fa-brands fa-linkedin"></i>
-            </div>
-            <div class="social">
+            </a>
+            <a href="https://www.instagram.com/subhankar__naskar/?next=%2F" class="social">
                 <i class="fa-brands fa-instagram"></i>
-            </div>
-            <div class="social">
+            </a>
+            <a href="https://www.facebook.com/subhnaskar11/" class="social">
                 <i class="fa-brands fa-facebook-f"></i>
-            </div>
+            </a>
         </div>
     </div>
     <div class="options">

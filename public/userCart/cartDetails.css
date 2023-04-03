@@ -1,0 +1,82 @@
+.navbar .checking{
+    top: 109px;
+}
+.ddShop{
+    top:149px;
+}
+
+.productArea table{
+    width: 100%;
+    border-collapse: collapse;
+    letter-spacing: 1px;
+    font-family: roboto;
+    overflow-x: scroll;
+}
+.productArea table, .productArea td, .productArea th{
+    border: 1px solid var(--borderColor);
+    padding: 8px;
+    text-align: center;
+}
+.productArea table .img{
+    height: 180px;
+    
+}
+.productArea table .img img{
+    height: 100%;
+}
+.productArea th{
+    color: #222;
+    font-weight: 500;
+}
+.productArea td{
+    font-size: 14px;
+    color: var(--topBar);
+    font-weight: 400;
+}
+.productArea table .options{
+    display: inline-flex;
+    border: 1px solid var(--borderColor);
+}
+.productArea table .options .option{
+    padding: 12px 14px;
+
+}
+.productArea table .options .removeCart{
+    background-color: var(--buttonHover);
+    color: white;
+}
+.productArea .decision{
+    margin-top: 20px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+.productArea .decision span{
+    letter-spacing: 1px;
+    font-family: roboto;
+    font-size: 14px;
+    font-weight: 400;
+}
+@media all and (max-width:800px) {
+    .productArea .tableWrap{
+        overflow-x: scroll;
+    }
+    .productArea table .img{
+        height: 100px;
+    }
+    .productArea th{
+        font-size: 12px;
+    }
+    .productArea td{
+        font-size: 12px;
+    }
+}
+.productArea .emptyCartData{
+    display: block;
+    width: 100%;
+    height: 50vh;
+    background-image:url("../resources/no-orders.jpg") ;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+}
