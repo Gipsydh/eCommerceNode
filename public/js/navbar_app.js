@@ -3,11 +3,12 @@ const shopDDlistMob = document.querySelector(".navbar .checking .ddShopInfo")
 const accountsBtn = document.querySelector(".container .navbar .topBar .accounts")
 const shopBtn=document.querySelector(".container .navbar .bottomBar .bottomNavbar .shopNavbar")
 shopBtn.addEventListener("click",function(){
-    window.location.href="../shop/shop.html?pageId=1"
+    window.location.href="/shop/shop.html?pageId=1"
 })
 function goToHome() {
     console.log("working")
-    window.location.href = "/"
+    let hostName=window.location.hostname;
+    window.location.href = `https://${hostname}/shop/shop.html`
 }
 console.log(accountsBtn)
 // const checkStatus=async()=>{
